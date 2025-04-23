@@ -1,9 +1,41 @@
 import Image from "next/image";
+import Link from "next/link";
+import { Github, Linkedin, Mail } from "lucide-react"; // Importera ikoner
+
 export default function Home() {
   return (
     <>
-      <section className="flex flex-row items-center justify-around min-h-screen text-left px-4">
-        <div>
+      <main className="min-h-screen flex items-center justify-center px-4">
+        <section className="flex flex-col items-center justify-center text-center space-y-12">
+          <h1 className="text-[#fe4629] animate-bounce text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl">
+            Under konstruktion
+          </h1>
+
+          {/* Social Media Links */}
+          <div className="flex space-x-8">
+            <Link
+              href="https://www.linkedin.com/in/alice-eriksson-malmo/"
+              target="_blank"
+              className="text-white hover:text-[#fe4629] transition-colors duration-300"
+            >
+              <Linkedin size={50} />
+            </Link>
+            <Link
+              href="https://github.com/alicegmn"
+              target="_blank"
+              className="text-white hover:text-[#fe4629] transition-colors duration-300"
+            >
+              <Github size={50} />
+            </Link>
+
+            <Link
+              href="mailto:alice.eriksson.561@gmail.com"
+              className="text-white hover:text-[#fe4629] transition-colors duration-300"
+            >
+              <Mail size={50} />
+            </Link>
+          </div>
+          {/* <div>
           <h1 className="text-4xl md:text-6xl font-bold mb-4">
             Hi, I'm Alice 👋
           </h1>
@@ -47,8 +79,9 @@ export default function Home() {
           <li>Figma</li>
           <li>Adobe Creative Suite</li>
           <li>Trello</li>
-        </ul>
-      </section>
+        </ul> */}
+        </section>
+      </main>
     </>
   );
 }
