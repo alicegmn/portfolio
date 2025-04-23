@@ -8,7 +8,7 @@ export default function Home() {
       <main className="min-h-screen flex items-center justify-center px-4">
         <section className="flex flex-col items-center justify-center text-center space-y-12">
           <h1 className="text-[#fe4629] animate-bounce text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl">
-            Under konstruktion
+            Under konstruktion.
           </h1>
 
           {/* Social Media Links */}
