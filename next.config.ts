@@ -1,10 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // dina andra inställningar här...
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
+	// eslint configuration is not supported in NextConfig
+	experimental: {
+		globalNotFound: true,
+	},
 };
 
 export default nextConfig;

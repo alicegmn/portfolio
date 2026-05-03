@@ -1,0 +1,12 @@
+.layout {
+	min-height: 100svh;
+	background: var(--color-background);
+	color: var(--color-text);
+	padding: var(--site-padding);
+	position: relative;
+}
+
+.main {
+	width: 100%;
+	min-height: calc(100svh - var(--site-padding) * 2);
+}

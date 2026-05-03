@@ -1,0 +1,17 @@
+.languageSwitcher {
+	display: flex;
+	gap: 0.4rem;
+	font-size: clamp(0.875rem, 1.5vw, 1rem);
+}
+
+.languageSwitcher a {
+	color: inherit;
+	text-decoration: none;
+	opacity: 0.45;
+}
+
+.languageSwitcher a:hover,
+.languageSwitcher a:focus-visible,
+.languageSwitcher .active {
+	opacity: 1;
+}

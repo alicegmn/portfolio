@@ -1,0 +1,27 @@
+.mainNav {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 0.25rem;
+	font-size: clamp(1.25rem, 3vw, 2.25rem);
+}
+
+.mainNav a {
+	color: inherit;
+	text-decoration: none;
+	line-height: 1;
+}
+
+.mainNav a:hover,
+.mainNav a:focus-visible {
+	text-decoration: underline;
+	text-underline-offset: 0.2em;
+}
+
+@media (min-width: 768px) {
+	.mainNav {
+		position: fixed;
+		left: clamp(1.5rem, 4vw, 3rem);
+		bottom: clamp(1.5rem, 4vw, 3rem);
+	}
+}
