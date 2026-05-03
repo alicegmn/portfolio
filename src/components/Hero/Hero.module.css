@@ -1,19 +1,21 @@
 .hero {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
+	width: 100%;
+	max-width: min(100%, 80rem);
+	margin-top: 15%;
 }
 
-.title {
+.headline {
+	max-width: 100%;
 	margin: 0;
-	font-size: clamp(4rem, 14vw, 13rem);
-	line-height: 0.85;
-	letter-spacing: -0.08em;
+	font-size: clamp(2.25rem, min(7vw, 10svh), 6rem);
+	line-height: 0.95;
 	font-weight: 500;
+	letter-spacing: -0.04em;
 }
 
 .description {
-	margin: 1.5rem 0 0;
-	font-size: clamp(1rem, 2vw, 1.35rem);
-	line-height: 1.4;
+	max-width: min(70vw, 52rem);
+	margin: clamp(1rem, 3svh, 2rem) 0 0;
+	font-size: clamp(1rem, min(2vw, 3svh), 2rem);
+	line-height: 1.3;
 }

@@ -1,11 +1,14 @@
 :root {
 	--color-background: #fff;
 	--color-text: #000;
+	--color-primary: #fe4629;
+	--color-secondary: #4b0a23;
 
 	--font-display: var(--font-rock-3d);
 	--font-body: var(--font-dm-sans);
 
 	--site-max-width: 1440px;
+	--site-padding: clamp(1.5rem, 4vw, 3rem);
 }
 
 * {
@@ -16,18 +19,20 @@ html,
 body {
 	min-height: 100%;
 	margin: 0;
-	padding: 0;
 }
 
 body {
-	background: var(--color-background);
+	background-color: var(--color-background);
 	color: var(--color-text);
 	font-family: var(--font-body), system-ui, sans-serif;
-	max-width: var(--site-max-width);
 }
 
-main {
-	width: 100%;
-	margin: 0 auto;
-	padding: 0 2vw;
+a:hover {
+	text-decoration: underline;
+	text-underline-offset: 0.2em;
+	color: var(--color-primary);
+}
+
+a:active {
+	color: var(--color-primary);
 }

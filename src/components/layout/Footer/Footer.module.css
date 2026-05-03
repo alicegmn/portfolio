@@ -1,31 +1,20 @@
 .footer {
-	margin-top: 2rem;
-	padding-block: 1.5rem;
-	background-color: #111827;
-	color: #ffffff;
-}
-
-.container {
-	width: 100%;
-	margin-inline: auto;
-	padding-inline: 1rem;
-
+	position: fixed;
 	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: space-between;
+	flex-direction: row;
+	justify-content: flex-start;
+	gap: 1rem;
+	right: var(--site-padding);
+	bottom: var(--site-padding);
 }
 
 .copyright {
-	font-size: 0.875rem;
-	line-height: 1.25rem;
-	color: #9ca3af;
+	font-size: 1rem;
 }
 
 .socialLinks {
 	display: flex;
-	gap: 1rem;
-	margin-top: 1rem;
+	gap: 0.5rem;
 }
 
 .socialLink {
@@ -34,16 +23,11 @@
 	align-items: center;
 	justify-content: center;
 	transition: color 0.2s ease;
+	color: inherit;
 }
 
 .socialLink:hover {
-	color: #d1d5db;
-}
-
-.socialLink:focus-visible {
-	outline: 2px solid currentColor;
-	outline-offset: 4px;
-	border-radius: 0.25rem;
+	color: var(--color-primary);
 }
 
 @media (min-width: 768px) {
