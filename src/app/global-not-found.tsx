@@ -26,7 +26,7 @@ export default function GlobalNotFound() {
 		<html lang="en" className={clsx(rock3d.variable, dmSans.variable)}>
 			<body>
 				<main>
-					<p>404</p>
+					<p style={{ fontFamily: "var(--font-display)" }}>404</p>
 					<h1>Page not found</h1>
 					<p>The page you are looking for does not exist.</p>
 					<a href="/sv">Till startsidan</a>

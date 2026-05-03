@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { Rock_3D, DM_Sans } from "next/font/google";
-import clsx from "clsx";
-
+import { clsx } from "clsx";
 import { content, getLocale, routes } from "@/content";
 import { Header } from "@/components/layout/Header/Header";
+// import Footer from "@/components/layout/Footer/Footer";
 import { MainNav } from "@/components/MainNav/MainNav";
 import styles from "./layout.module.css";
 import "../globals.css";
@@ -68,10 +68,9 @@ export default async function LocaleLayout({
 						currentLocale={currentLocale}
 						homeHref={routes[currentLocale].home}
 					/>
-
 					<main className={styles.main}>{children}</main>
-
 					<MainNav items={content[currentLocale].nav} />
+					{/* <Footer /> */}
 				</div>
 			</body>
 		</html>
