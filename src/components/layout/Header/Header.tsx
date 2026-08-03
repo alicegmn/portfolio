@@ -1,6 +1,7 @@
 import Link from "next/link";
-import { type Locale } from "@/content/content";
+import { content, type Locale } from "@/content/content";
 import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher/LanguageSwitcher";
+import { MainNav } from "../MainNav/MainNav";
 import styles from "./Header.module.css";
 
 type HeaderProps = {
@@ -16,7 +17,13 @@ export function Header({ name, currentLocale, homeHref }: HeaderProps) {
 				{name}
 			</Link>
 
-			<LanguageSwitcher currentLocale={currentLocale} />
+			<div className={styles.navigation}>
+				<MainNav items={content[currentLocale].nav} />
+			</div>
+
+			<div className={styles.language}>
+				<LanguageSwitcher currentLocale={currentLocale} />
+			</div>
 		</header>
 	);
 }

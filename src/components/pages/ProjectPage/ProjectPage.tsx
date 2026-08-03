@@ -13,19 +13,21 @@ export function ProjectPage({ project, locale }: ProjectPageProps) {
 	return (
 		<article className={styles.project}>
 			<header className={styles.hero}>
-				<p>{project.category}</p>
-				<h1>{project.title}</h1>
+				<p className={styles.category}>{project.category}</p>
+				<h1 className={styles.title}>{project.title}</h1>
 				<p className={styles.summary}>{project.summary}</p>
 
 				<div className={styles.links}>
 					{project.links.live && (
-						<Link href={project.links.live}>
+						<Link href={project.links.live} className={styles.primaryLink}>
 							{locale === "sv" ? "Besök projektet" : "View live"}
 						</Link>
 					)}
 
 					{project.links.github && (
-						<Link href={project.links.github}>GitHub</Link>
+						<Link href={project.links.github} className={styles.secondaryLink}>
+							GitHub
+						</Link>
 					)}
 				</div>
 
@@ -58,17 +60,17 @@ export function ProjectPage({ project, locale }: ProjectPageProps) {
 				)}
 			</section>
 
-			<section>
+			<section className={styles.section}>
 				<h2>{locale === "sv" ? "Problemet" : "The problem"}</h2>
 				<p>{project.problem}</p>
 			</section>
 
-			<section>
+			<section className={styles.section}>
 				<h2>{locale === "sv" ? "Lösningen" : "The solution"}</h2>
 				<p>{project.solution}</p>
 			</section>
 
-			<section>
+			<section className={styles.section}>
 				<h2>{locale === "sv" ? "Mitt ansvar" : "My responsibilities"}</h2>
 
 				<ul>
@@ -78,7 +80,7 @@ export function ProjectPage({ project, locale }: ProjectPageProps) {
 				</ul>
 			</section>
 
-			<section>
+			<section className={styles.section}>
 				<h2>
 					{locale === "sv" ? "Teknisk lösning" : "Technical implementation"}
 				</h2>
@@ -91,7 +93,7 @@ export function ProjectPage({ project, locale }: ProjectPageProps) {
 			</section>
 
 			{project.challenges.map((challenge) => (
-				<section key={challenge.title}>
+				<section key={challenge.title} className={styles.section}>
 					<h2>{challenge.title}</h2>
 					<p>{challenge.description}</p>
 
@@ -100,12 +102,12 @@ export function ProjectPage({ project, locale }: ProjectPageProps) {
 				</section>
 			))}
 
-			<section>
+			<section className={styles.section}>
 				<h2>{locale === "sv" ? "Resultat" : "Result"}</h2>
 				<p>{project.result}</p>
 			</section>
 
-			<section>
+			<section className={styles.section}>
 				<h2>{locale === "sv" ? "Lärdomar" : "What I learned"}</h2>
 
 				<ul>
@@ -115,7 +117,7 @@ export function ProjectPage({ project, locale }: ProjectPageProps) {
 				</ul>
 			</section>
 
-			<section>
+			<section className={styles.section}>
 				<h2>{locale === "sv" ? "Teknik" : "Technologies"}</h2>
 
 				<ul className={styles.technologies}>

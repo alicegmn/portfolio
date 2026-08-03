@@ -1,9 +1,15 @@
 .layout {
+	display: flex;
+	flex-direction: column;
+	min-height: 100dvh;
+
 	padding: var(--site-padding);
 	background-color: var(--color-background);
 	color: var(--color-text);
-	display: flex;
-	flex-direction: column;
-	overflow: hidden;
-	margin-bottom: 4rem;
+
+	box-sizing: border-box;
+}
+
+.main {
+	flex: 1;
 }

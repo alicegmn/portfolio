@@ -6,11 +6,11 @@ import {
 	EnvelopeClosedIcon,
 } from "@radix-ui/react-icons";
 
-export default function Footer() {
+export function Footer() {
 	return (
 		<footer className={styles.footer}>
 			<p className={styles.copyright}>
-				{new Date().getFullYear()}' '&copy; alicegmn
+				alicegmn &copy; {new Date().getFullYear()}
 			</p>
 			<div className={styles.socialLinks}>
 				<Link
