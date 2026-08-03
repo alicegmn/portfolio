@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { Rock_3D, DM_Sans } from "next/font/google";
 import clsx from "clsx";
-import "./globals.css";
 import Link from "next/link";
+import { content } from "@/content";
+import "./globals.css";
 
 const rock3d = Rock_3D({
 	weight: "400",
@@ -17,20 +18,22 @@ const dmSans = DM_Sans({
 	display: "swap",
 });
 
+const notFoundContent = content.en.notFound;
+
 export const metadata: Metadata = {
-	title: "404 – Page not found",
-	description: "The page you are looking for does not exist.",
+	title: notFoundContent.title,
+	description: notFoundContent.description,
 };
 
 export default function GlobalNotFound() {
 	return (
 		<html lang="en" className={clsx(rock3d.variable, dmSans.variable)}>
-			<body>
+			<body className={dmSans.className}>
 				<main>
-					<p style={{ fontFamily: "var(--font-display)" }}>404</p>
-					<h1>Page not found</h1>
-					<p>The page you are looking for does not exist.</p>
-					<Link href="/sv">Till startsidan</Link>
+					<p className={rock3d.className}>404</p>
+					<h1>{notFoundContent.headline}</h1>
+					<p>{notFoundContent.message}</p>
+					<Link href="/en">{notFoundContent.linkText}</Link>
 				</main>
 			</body>
 		</html>

@@ -1,4 +1,5 @@
-import { getLocale } from "@/content";
+import { notFound } from "next/navigation";
+import { isLocale } from "@/content";
 import { HomePage } from "@/components/pages/HomePage/HomePage";
 
 type PageProps = {
@@ -9,7 +10,10 @@ type PageProps = {
 
 export default async function Page({ params }: PageProps) {
 	const { locale } = await params;
-	const currentLocale = getLocale(locale);
 
-	return <HomePage currentLocale={currentLocale} />;
+	if (!isLocale(locale)) {
+		notFound();
+	}
+
+	return <HomePage currentLocale={locale} />;
 }
