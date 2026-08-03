@@ -1,5 +1,7 @@
 import { notFound } from "next/navigation";
-import { getPageKey, isLocale } from "@/content";
+import { getPageKey, isLocale } from "@/content/content";
+import { getProject } from "@/content/projects";
+import { ProjectPage } from "@/components/pages/ProjectPage/ProjectPage";
 import { ProjectsPage } from "@/components/pages/ProjectsPage/ProjectsPage";
 import { AboutPage } from "@/components/pages/AboutPage/AboutPage";
 import { ContactPage } from "@/components/pages/ContactPage/ContactPage";
@@ -18,29 +20,37 @@ export default async function DynamicPage({ params }: PageProps) {
 	if (!isLocale(locale)) {
 		notFound();
 	}
-
-	const pageSlug = slug.at(0);
-
-	if (slug.length !== 1 || !pageSlug) {
-		notFound();
-	}
-
+	const [pageSlug, projectSlug] = slug;
 	const pageKey = getPageKey(locale, pageSlug);
 
-	switch (pageKey) {
-		case "projects":
-			return <ProjectsPage locale={locale} />;
+	if (slug.length === 1) {
+		switch (pageKey) {
+			case "projects":
+				return <ProjectsPage locale={locale} />;
 
-		case "resume":
-			return <ResumePage locale={locale} />;
+			case "about":
+				return <AboutPage locale={locale} />;
 
-		case "about":
-			return <AboutPage locale={locale} />;
+			case "resume":
+				return <ResumePage locale={locale} />;
 
-		case "contact":
-			return <ContactPage locale={locale} />;
+			case "contact":
+				return <ContactPage locale={locale} />;
 
-		default:
-			notFound();
+			default:
+				notFound();
+		}
 	}
+
+	if (slug.length === 2 && pageKey === "projects") {
+		const project = getProject(locale, projectSlug);
+
+		if (!project) {
+			notFound();
+		}
+
+		return <ProjectPage project={project} locale={locale} />;
+	}
+
+	notFound();
 }

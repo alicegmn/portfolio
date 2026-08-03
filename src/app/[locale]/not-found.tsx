@@ -1,6 +1,6 @@
 "use client";
 
-import { content, isLocale } from "@/content";
+import { content, isLocale } from "@/content/content";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 

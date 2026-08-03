@@ -72,7 +72,11 @@ export const content = {
 				"Just nu: Examensprojekt på Dynamic Dog i Malmö. Tillgängling för nya uppdrag: från och med juni 2026.",
 		},
 
-		projects: {},
+		projects: {
+			title: "Projekt",
+			intro:
+				"Ett urval av projekt där jag har arbetat med frontend, backend, API:er och molnbaserad leverans.",
+		},
 
 		about: {
 			title:
@@ -130,7 +134,11 @@ export const content = {
 				"Currently: Degree project at Dynamic Dog in Malmö. Available for new assignments: starting June 2026.",
 		},
 
-		projects: {},
+		projects: {
+			title: "Projects",
+			intro:
+				"A selection of projects where I have worked with frontend, backend, APIs and cloud delivery.",
+		},
 
 		about: {
 			title:

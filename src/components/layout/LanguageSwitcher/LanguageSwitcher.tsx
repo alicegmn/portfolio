@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { routes, type Locale } from "@/content";
+import { routes, type Locale } from "@/content/content";
 import styles from "./LanguageSwitcher.module.css";
 
 type LanguageSwitcherProps = {

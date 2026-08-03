@@ -1,4 +1,4 @@
-import { content, type Locale } from "@/content";
+import { content, type Locale } from "@/content/content";
 import Link from "next/link";
 
 type ContactPageProps = Readonly<{
