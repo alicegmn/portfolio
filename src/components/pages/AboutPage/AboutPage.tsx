@@ -1,4 +1,4 @@
-import { content, type Locale } from "@/content";
+import { content, type Locale } from "@/content/content";
 import styles from "./AboutPage.module.css";
 
 type AboutPageProps = Readonly<{

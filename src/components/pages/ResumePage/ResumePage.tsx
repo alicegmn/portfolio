@@ -1,4 +1,4 @@
-import { content, type Locale } from "@/content";
+import { content, type Locale } from "@/content/content";
 
 type ResumePageProps = Readonly<{
 	locale: Locale;

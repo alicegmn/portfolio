@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { type Locale } from "@/content";
+import { type Locale } from "@/content/content";
 import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher/LanguageSwitcher";
 import styles from "./Header.module.css";
 

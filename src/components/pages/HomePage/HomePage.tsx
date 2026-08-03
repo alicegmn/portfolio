@@ -1,4 +1,4 @@
-import { content, type Locale } from "@/content";
+import { content, type Locale } from "@/content/content";
 import { Hero } from "@/components/Hero/Hero";
 
 type HomePageProps = Readonly<{

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Rock_3D, DM_Sans } from "next/font/google";
 import clsx from "clsx";
 import Link from "next/link";
-import { content } from "@/content";
+import { content } from "@/content/content";
 import "./globals.css";
 
 const rock3d = Rock_3D({

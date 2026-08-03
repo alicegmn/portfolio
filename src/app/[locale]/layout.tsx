@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { Rock_3D, DM_Sans } from "next/font/google";
 import { clsx } from "clsx";
-import { content, getLocale, routes } from "@/content";
+import { content, getLocale, routes } from "@/content/content";
 import { Header } from "@/components/layout/Header/Header";
 import { MainNav } from "@/components/MainNav/MainNav";
 import styles from "./layout.module.css";

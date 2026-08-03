@@ -1,16 +1,32 @@
-import { content, type Locale } from "@/content";
+import { content, type Locale } from "@/content/content";
+import { projectSlugs, projects } from "@/content/projects";
+import { ProjectCard } from "@/components/ProjectCard/ProjectCard";
+import styles from "./ProjectsPage.module.css";
 
-type ProjectsPageProps = Readonly<{
+type ProjectsPageProps = {
 	locale: Locale;
-}>;
+};
 
 export function ProjectsPage({ locale }: ProjectsPageProps) {
-	const projects = content[locale].projects;
+	const pageContent = content[locale].projects;
 
 	return (
-		<section>
-			<h1>Projects</h1>
-			<p>Om min projects</p>
+		<section className={styles.page}>
+			<header className={styles.header}>
+				<h1>{pageContent.title}</h1>
+				<p>{pageContent.intro}</p>
+			</header>
+
+			<div className={styles.grid}>
+				{projectSlugs.map((slug) => (
+					<ProjectCard
+						key={slug}
+						slug={slug}
+						locale={locale}
+						project={projects[locale][slug]}
+					/>
+				))}
+			</div>
 		</section>
 	);
 }
