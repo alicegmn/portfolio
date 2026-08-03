@@ -5,8 +5,6 @@ type HomePageProps = Readonly<{
 	currentLocale: Locale;
 }>;
 export function HomePage({ currentLocale }: HomePageProps) {
-	const pageContent = content[currentLocale];
-
 	return (
 		<Hero
 			headline={content[currentLocale].home.headline}

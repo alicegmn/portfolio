@@ -1,7 +1,9 @@
 import { notFound } from "next/navigation";
-import { getLocale, getPageKey } from "@/content";
+import { getPageKey, isLocale } from "@/content";
 import { ProjectsPage } from "@/components/pages/ProjectsPage/ProjectsPage";
 import { AboutPage } from "@/components/pages/AboutPage/AboutPage";
+import { ContactPage } from "@/components/pages/ContactPage/ContactPage";
+import { ResumePage } from "@/components/pages/ResumePage/ResumePage";
 
 type PageProps = {
 	params: Promise<{
@@ -12,23 +14,31 @@ type PageProps = {
 
 export default async function DynamicPage({ params }: PageProps) {
 	const { locale, slug } = await params;
-	const currentLocale = getLocale(locale);
 
-	if (slug.length !== 1) {
+	if (!isLocale(locale)) {
 		notFound();
 	}
 
-	const pageKey = getPageKey(currentLocale, slug[0]);
+	const pageSlug = slug.at(0);
 
-	if (!pageKey) {
+	if (slug.length !== 1 || !pageSlug) {
 		notFound();
 	}
+
+	const pageKey = getPageKey(locale, pageSlug);
+
 	switch (pageKey) {
 		case "projects":
-			return <ProjectsPage locale={currentLocale} />;
+			return <ProjectsPage locale={locale} />;
+
+		case "resume":
+			return <ResumePage locale={locale} />;
 
 		case "about":
-			return <AboutPage locale={currentLocale} />;
+			return <AboutPage locale={locale} />;
+
+		case "contact":
+			return <ContactPage locale={locale} />;
 
 		default:
 			notFound();

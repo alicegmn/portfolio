@@ -2,36 +2,44 @@ export const locales = ["sv", "en"] as const;
 
 export type Locale = (typeof locales)[number];
 
+export function isLocale(locale: string): locale is Locale {
+	return locales.includes(locale as Locale);
+}
+
+export function getLocale(locale: string): Locale {
+	return isLocale(locale) ? locale : "en";
+}
+
 export const routes = {
 	sv: {
 		home: "/sv",
 		projects: "/sv/projekt",
 		about: "/sv/om",
-		cv: "/sv/cv",
+		resume: "/sv/cv",
 		contact: "/sv/kontakt",
 	},
 	en: {
 		home: "/en",
 		projects: "/en/projects",
 		about: "/en/about",
-		cv: "/en/resume",
+		resume: "/en/resume",
 		contact: "/en/contact",
 	},
 } as const;
 
-export type PageKey = "projects" | "about" | "cv" | "contact";
+export type PageKey = "projects" | "about" | "resume" | "contact";
 
 export const pageSlugs = {
 	sv: {
 		projekt: "projects",
 		om: "about",
-		cv: "cv",
+		cv: "resume",
 		kontakt: "contact",
 	},
 	en: {
 		projects: "projects",
 		about: "about",
-		resume: "cv",
+		resume: "resume",
 		contact: "contact",
 	},
 } as const satisfies Record<Locale, Record<string, PageKey>>;
@@ -47,6 +55,7 @@ export const content = {
 		email: "alice.eriksson.561@gmail.com",
 		github: "https://github.com/alicegmn",
 		linkedin: "https://www.linkedin.com/in/alice-eriksson-malmo/",
+		discord: "https://discord.com/users/1200463637702250596",
 	},
 
 	sv: {
@@ -86,12 +95,24 @@ export const content = {
 			],
 		},
 
+		contact: {
+			heading: "Du når mig här!",
+		},
+
 		nav: [
 			{ label: "/projekt", href: routes.sv.projects },
-			{ label: "/cv", href: routes.sv.cv },
+			{ label: "/cv", href: routes.sv.resume },
 			{ label: "/om", href: routes.sv.about },
 			{ label: "/kontakt", href: routes.sv.contact },
 		],
+
+		notFound: {
+			title: "404 – Sidan kunde inte hittas",
+			description: "Sidan du letar efter finns inte.",
+			headline: "Sidan kunde inte hittas",
+			message: "Sidan du letar efter finns inte.",
+			linkText: "Till startsidan",
+		},
 	},
 
 	en: {
@@ -132,15 +153,23 @@ export const content = {
 			],
 		},
 
+		contact: {
+			heading: "Get in touch!",
+		},
+
 		nav: [
 			{ label: "/projects", href: routes.en.projects },
-			{ label: "/resume", href: routes.en.cv },
+			{ label: "/resume", href: routes.en.resume },
 			{ label: "/about", href: routes.en.about },
 			{ label: "/contact", href: routes.en.contact },
 		],
+
+		notFound: {
+			title: "404 – Page not found",
+			description: "The page you are looking for does not exist.",
+			headline: "Page not found",
+			message: "The page you are looking for does not exist.",
+			linkText: "Back to homepage",
+		},
 	},
 } as const;
-
-export function getLocale(locale: string): Locale {
-	return locale === "en" ? "en" : "sv";
-}
