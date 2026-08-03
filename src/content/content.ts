@@ -104,6 +104,7 @@ export const content = {
 		},
 
 		nav: [
+			{ label: "/hem", href: routes.sv.home },
 			{ label: "/projekt", href: routes.sv.projects },
 			{ label: "/cv", href: routes.sv.resume },
 			{ label: "/om", href: routes.sv.about },
@@ -166,6 +167,7 @@ export const content = {
 		},
 
 		nav: [
+			{ label: "/home", href: routes.en.home },
 			{ label: "/projects", href: routes.en.projects },
 			{ label: "/resume", href: routes.en.resume },
 			{ label: "/about", href: routes.en.about },

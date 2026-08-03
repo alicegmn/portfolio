@@ -4,7 +4,7 @@ import { Rock_3D, DM_Sans } from "next/font/google";
 import { clsx } from "clsx";
 import { content, getLocale, routes } from "@/content/content";
 import { Header } from "@/components/layout/Header/Header";
-import { MainNav } from "@/components/MainNav/MainNav";
+import { Footer } from "@/components/layout/Footer/Footer";
 import styles from "./layout.module.css";
 import "../globals.css";
 
@@ -69,8 +69,7 @@ export default async function LocaleLayout({
 					/>
 
 					<main className={styles.main}>{children}</main>
-
-					<MainNav items={content[currentLocale].nav} />
+					<Footer />
 				</div>
 			</body>
 		</html>
