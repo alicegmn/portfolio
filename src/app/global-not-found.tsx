@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Rock_3D, DM_Sans } from "next/font/google";
 import clsx from "clsx";
 import "./globals.css";
+import Link from "next/link";
 
 const rock3d = Rock_3D({
 	weight: "400",
@@ -29,7 +30,7 @@ export default function GlobalNotFound() {
 					<p style={{ fontFamily: "var(--font-display)" }}>404</p>
 					<h1>Page not found</h1>
 					<p>The page you are looking for does not exist.</p>
-					<a href="/sv">Till startsidan</a>
+					<Link href="/sv">Till startsidan</Link>
 				</main>
 			</body>
 		</html>
