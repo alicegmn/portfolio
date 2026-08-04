@@ -49,6 +49,37 @@ export function getPageKey(locale: Locale, slug: string): PageKey | undefined {
 	return slugs[slug];
 }
 
+export function getLocalizedPath(
+	pathname: string,
+	currentLocale: Locale,
+	targetLocale: Locale,
+): string {
+	const segments = pathname.split("/").filter(Boolean);
+	const pageSlug = segments[1];
+
+	if (!pageSlug) {
+		return routes[targetLocale].home;
+	}
+
+	const pageKey = getPageKey(currentLocale, pageSlug);
+
+	if (!pageKey) {
+		return routes[targetLocale].home;
+	}
+
+	const targetSlug = Object.entries(pageSlugs[targetLocale]).find(
+		([, key]) => key === pageKey,
+	)?.[0];
+
+	if (!targetSlug) {
+		return routes[targetLocale].home;
+	}
+
+	const trailingSegments = segments.slice(2);
+
+	return `/${targetLocale}/${targetSlug}${trailingSegments.length ? `/${trailingSegments.join("/")}` : ""}`;
+}
+
 export const content = {
 	shared: {
 		name: "Alice Eriksson",
