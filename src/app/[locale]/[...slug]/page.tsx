@@ -8,7 +8,7 @@ import { AboutPage } from "@/components/pages/AboutPage/AboutPage";
 import { ContactPage } from "@/components/pages/ContactPage/ContactPage";
 import { ProjectPage } from "@/components/pages/ProjectPage/ProjectPage";
 import { ProjectsPage } from "@/components/pages/ProjectsPage/ProjectsPage";
-import { ResumePage } from "@/components/pages/ResumePage/ResumePage";
+import { ExperiencePage } from "@/components/pages/ExperiencePage/ExperiencePage";
 
 type PageProps = {
 	params: Promise<{
@@ -101,8 +101,8 @@ export default async function DynamicPage({ params }: PageProps) {
 			case "about":
 				return <AboutPage locale={locale} />;
 
-			case "resume":
-				return <ResumePage locale={locale} />;
+			case "experience":
+				return <ExperiencePage locale={locale} />;
 
 			case "contact":
 				return <ContactPage locale={locale} />;
