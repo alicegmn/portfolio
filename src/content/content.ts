@@ -1,3 +1,5 @@
+import { experience } from "./experience";
+
 export const locales = ["sv", "en"] as const;
 
 export type Locale = (typeof locales)[number];
@@ -15,31 +17,31 @@ export const routes = {
 		home: "/sv",
 		projects: "/sv/projekt",
 		about: "/sv/om",
-		resume: "/sv/cv",
+		experience: "/sv/cv",
 		contact: "/sv/kontakt",
 	},
 	en: {
 		home: "/en",
 		projects: "/en/projects",
 		about: "/en/about",
-		resume: "/en/resume",
+		experience: "/en/experience",
 		contact: "/en/contact",
 	},
 } as const;
 
-export type PageKey = "projects" | "about" | "resume" | "contact";
+export type PageKey = "projects" | "about" | "experience" | "contact";
 
 export const pageSlugs = {
 	sv: {
 		projekt: "projects",
 		om: "about",
-		cv: "resume",
+		cv: "experience",
 		kontakt: "contact",
 	},
 	en: {
 		projects: "projects",
 		about: "about",
-		resume: "resume",
+		experience: "experience",
 		contact: "contact",
 	},
 } as const satisfies Record<Locale, Record<string, PageKey>>;
@@ -134,10 +136,12 @@ export const content = {
 			heading: "Du når mig här!",
 		},
 
+		experience: experience.sv,
+
 		nav: [
 			{ label: "/hem", href: routes.sv.home },
 			{ label: "/projekt", href: routes.sv.projects },
-			{ label: "/cv", href: routes.sv.resume },
+			{ label: "/cv", href: routes.sv.experience },
 			{ label: "/om", href: routes.sv.about },
 			{ label: "/kontakt", href: routes.sv.contact },
 		],
@@ -197,10 +201,12 @@ export const content = {
 			heading: "Get in touch!",
 		},
 
+		experience: experience.en,
+
 		nav: [
 			{ label: "/home", href: routes.en.home },
 			{ label: "/projects", href: routes.en.projects },
-			{ label: "/resume", href: routes.en.resume },
+			{ label: "/experience", href: routes.en.experience },
 			{ label: "/about", href: routes.en.about },
 			{ label: "/contact", href: routes.en.contact },
 		],
