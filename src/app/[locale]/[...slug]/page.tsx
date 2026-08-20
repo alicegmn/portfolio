@@ -89,15 +89,60 @@ export async function generateMetadata({
 					},
 				],
 			},
+			twitter: {
+				card: "summary_large_image",
+				title: project.title,
+				description: project.summary,
+				images: [project.image.src],
+			},
 		};
 	}
 
 	if (slug.length === 1 && pageKey) {
-		const meta = content[locale].meta;
+		const pageMeta = {
+			projects: {
+				title: content[locale].projects.title,
+				description: content[locale].projects.intro,
+			},
+			about: {
+				title: content[locale].about.title,
+				description: content[locale].about.intro,
+			},
+			experience: {
+				title: content[locale].experience.heading,
+				description: content[locale].experience.metaDescription,
+			},
+			contact: {
+				title: content[locale].contact.heading,
+				description: content[locale].contact.description,
+			},
+		}[pageKey];
 
 		return {
-			title: meta.title,
-			description: meta.description,
+			title: `${pageMeta.title} | Alice Eriksson`,
+			description: pageMeta.description,
+			openGraph: {
+				title: `${pageMeta.title} | Alice Eriksson`,
+				description: pageMeta.description,
+				url: routes[locale][pageKey],
+				siteName: "Alice Eriksson",
+				locale: content[locale].meta.openGraphLocale,
+				type: "website",
+				images: [
+					{
+						url: "/og-image.svg",
+						width: 1200,
+						height: 630,
+						alt: pageMeta.title,
+					},
+				],
+			},
+			twitter: {
+				card: "summary_large_image",
+				title: `${pageMeta.title} | Alice Eriksson`,
+				description: pageMeta.description,
+				images: ["/og-image.svg"],
+			},
 			alternates: {
 				canonical: routes[locale][pageKey],
 				languages: {

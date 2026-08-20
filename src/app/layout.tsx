@@ -8,10 +8,7 @@ const siteUrl = "https://aliceeriksson.se";
 
 export const metadata: Metadata = {
 	metadataBase: new URL(siteUrl),
-	title: {
-		default: "Alice Eriksson – Fullstackutvecklare i Malmö",
-		template: "%s | Alice Eriksson",
-	},
+	title: "Alice Eriksson – Fullstackutvecklare i Malmö",
 	description: "Fullstackutvecklare, kommunikatör och digital problemlösare.",
 };
 
