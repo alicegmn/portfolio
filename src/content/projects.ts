@@ -106,7 +106,7 @@ export const projects = {
 		"dynamic-dog": {
 			title: "Optimering av dynamicdog.se",
 			summary:
-				"Migrering från Next.js och styled components till TanStack Start och CSS modules samt prestandeoptimering med Lighthouse.",
+				"Migrering från Next.js och styled components till TanStack Start och CSS modules samt prestandaoptimering med Lighthouse.",
 			category: "Frontendarkitektur",
 			period: "2026",
 			role: "Frontendutveckling",
