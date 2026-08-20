@@ -10,21 +10,29 @@
 	},
 	"dependencies": {
 		"@radix-ui/react-icons": "^1.3.2",
-		"next": "16.2.4",
-		"react": "19.2.5",
-		"react-dom": "19.2.5"
+		"next": "16.3.1",
+		"react": "19.2.8",
+		"react-dom": "19.2.8"
 	},
 	"devDependencies": {
-		"@types/node": "^20",
-		"@types/react": "19.2.14",
-		"@types/react-dom": "19.2.3",
-		"eslint": "^9",
-		"eslint-config-next": "16.2.4",
-		"typescript": "^5"
+		"@types/node": "^20.19.43",
+		"@types/react": "19.2.18",
+		"@types/react-dom": "19.2.4",
+		"eslint": "^9.39.4",
+		"eslint-config-next": "16.3.1",
+		"typescript": "^5.9.3"
 	},
 	"overrides": {
-		"@types/react": "19.2.14",
-		"@types/react-dom": "19.2.3"
+		"@babel/core": "7.29.6",
+		"@types/react": "19.2.18",
+		"@types/react-dom": "19.2.4"
+	},
+	"pnpm": {
+		"overrides": {
+			"@babel/core": "7.29.6",
+			"@types/react": "19.2.18",
+			"@types/react-dom": "19.2.4"
+		}
 	},
 	"packageManager": "pnpm@10.33.2+sha512.a90faf6feeab71ad6c6e57f94e0fe1a12f5dcc22cd754db40ae9593eb6a3e0b6b12e3540218bb37ae083404b1f2ce6db2a4121e979829b4aff94b99f49da1cf8"
 }
