@@ -109,7 +109,7 @@ export const content = {
 		home: {
 			headline: "Digital problemlösare med människan i fokus.",
 			description:
-				"Jag gillar digitalisering som märks i vardagen – när den förenklar, effektiviserar och skapar värde för människor.",
+				"Fullstackutvecklare med IT- och kommunikationsbakgrund. Jag drivs av digitalisering som gör skillnad – när det förenklar, effektiviserar och skapar värde för människor.",
 			sections: {
 				selectedProjects: {
 					heading: "Utvalda projekt",
@@ -203,7 +203,7 @@ export const content = {
 		home: {
 			headline: "Digital problem solver with a human-first approach.",
 			description:
-				"I’m drawn to digitalisation that makes a difference in everyday life – when it simplifies, streamlines, and creates value for people.",
+				"Full-stack developer with a background in IT and communications. I’m motivated by digitalisation that makes a difference – when it simplifies, streamlines, and creates value for people.",
 			sections: {
 				selectedProjects: {
 					heading: "Selected projects",
