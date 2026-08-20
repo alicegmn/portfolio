@@ -7,6 +7,8 @@ export const selectedExperienceCompanies = [
 export const experience = {
 	sv: {
 		heading: "CV",
+		metaDescription:
+			"Arbetslivserfarenhet, utbildning och teknisk kompetens inom utveckling, IT-support, kommunikation och digitala projekt.",
 		experience: {
 			heading: "Arbetslivserfarenhet",
 			items: [
@@ -91,6 +93,8 @@ export const experience = {
 	},
 	en: {
 		heading: "Experience",
+		metaDescription:
+			"Work experience, education and technical skills across development, IT support, communication and digital projects.",
 		experience: {
 			heading: "Work Experience",
 			items: [
