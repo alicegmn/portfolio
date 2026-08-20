@@ -71,15 +71,39 @@ export async function generateMetadata({
 		return {
 			title: `${project.title} | Alice Eriksson`,
 			description: project.summary,
+			alternates: {
+				canonical: `${routes[locale].projects}/${projectSlug}`,
+				languages: {
+					sv: `${routes.sv.projects}/${projectSlug}`,
+					en: `${routes.en.projects}/${projectSlug}`,
+				},
+			},
 			openGraph: {
 				title: project.title,
 				description: project.summary,
+				url: `${routes[locale].projects}/${projectSlug}`,
 				images: [
 					{
 						url: project.image.src,
 						alt: project.image.alt,
 					},
 				],
+			},
+		};
+	}
+
+	if (slug.length === 1 && pageKey) {
+		const meta = content[locale].meta;
+
+		return {
+			title: meta.title,
+			description: meta.description,
+			alternates: {
+				canonical: routes[locale][pageKey],
+				languages: {
+					sv: routes.sv[pageKey],
+					en: routes.en[pageKey],
+				},
 			},
 		};
 	}

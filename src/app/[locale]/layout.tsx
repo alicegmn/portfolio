@@ -50,13 +50,6 @@ export async function generateMetadata({
 			description: meta.description,
 			images: ["/og-image.svg"],
 		},
-		alternates: {
-			canonical: routes[currentLocale].home,
-			languages: {
-				sv: routes.sv.home,
-				en: routes.en.home,
-			},
-		},
 	};
 }
 
