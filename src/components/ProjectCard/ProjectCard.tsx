@@ -9,13 +9,21 @@ type ProjectCardProps = {
 	project: Project;
 	slug: ProjectSlug;
 	locale: Locale;
+	variant?: "default" | "grid";
 };
 
-export function ProjectCard({ project, slug, locale }: ProjectCardProps) {
+export function ProjectCard({
+	project,
+	slug,
+	locale,
+	variant = "default",
+}: ProjectCardProps) {
 	const href = `${routes[locale].projects}/${slug}`;
 
 	return (
-		<article className={styles.card}>
+		<article
+			className={`${styles.card} ${variant === "grid" ? styles.gridCard : ""}`}
+		>
 			<Link href={href} className={styles.link}>
 				<div className={styles.imageWrapper}>
 					<Image
@@ -28,7 +36,7 @@ export function ProjectCard({ project, slug, locale }: ProjectCardProps) {
 				</div>
 
 				<div className={styles.content}>
-					<p className={styles.category}>{project.category}</p>
+					<p className={styles.category}>/ {project.category}</p>
 					<h2>{project.title}</h2>
 					<p>{project.summary}</p>
 

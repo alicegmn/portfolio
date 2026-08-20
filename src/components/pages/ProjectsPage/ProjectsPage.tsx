@@ -1,5 +1,6 @@
 import { content, type Locale } from "@/content/content";
 import { projectSlugs, projects } from "@/content/projects";
+import { IntroSection } from "@/components/IntroSection/IntroSection";
 import { ProjectCard } from "@/components/ProjectCard/ProjectCard";
 import styles from "./ProjectsPage.module.css";
 
@@ -12,10 +13,11 @@ export function ProjectsPage({ locale }: ProjectsPageProps) {
 
 	return (
 		<section className={styles.page}>
-			<header className={styles.header}>
-				<h1>{pageContent.title}</h1>
-				<p>{pageContent.intro}</p>
-			</header>
+			<IntroSection
+				eyebrow={`/ ${locale === "sv" ? "projekt" : "projects"}`}
+				title={pageContent.title}
+				description={pageContent.intro}
+			/>
 
 			<div className={styles.grid}>
 				{projectSlugs.map((slug) => (
@@ -24,6 +26,7 @@ export function ProjectsPage({ locale }: ProjectsPageProps) {
 						slug={slug}
 						locale={locale}
 						project={projects[locale][slug]}
+						variant="grid"
 					/>
 				))}
 			</div>

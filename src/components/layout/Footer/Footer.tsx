@@ -1,4 +1,5 @@
 import Link from "next/link";
+import type { Locale } from "@/content/content";
 import styles from "./Footer.module.css";
 import {
 	GitHubLogoIcon,
@@ -6,7 +7,24 @@ import {
 	EnvelopeClosedIcon,
 } from "@radix-ui/react-icons";
 
-export function Footer() {
+type FooterProps = Readonly<{
+	locale: Locale;
+}>;
+
+export function Footer({ locale }: FooterProps) {
+	const labels =
+		locale === "sv"
+			? {
+					github: "Se mina projekt på GitHub",
+					linkedin: "Kontakta mig på LinkedIn",
+					email: "Skicka e-post",
+				}
+			: {
+					github: "See my GitHub projects",
+					linkedin: "Connect on LinkedIn",
+					email: "Email me",
+				};
+
 	return (
 		<footer className={styles.footer}>
 			<p className={styles.copyright}>
@@ -18,7 +36,7 @@ export function Footer() {
 					target="_blank"
 					rel="noopener noreferrer"
 					className={styles.socialLink}
-					aria-label="See my GitHub projects"
+					aria-label={labels.github}
 				>
 					<GitHubLogoIcon />
 				</Link>
@@ -28,7 +46,7 @@ export function Footer() {
 					target="_blank"
 					rel="noopener noreferrer"
 					className={styles.socialLink}
-					aria-label="Connect on LinkedIn"
+					aria-label={labels.linkedin}
 				>
 					<LinkedInLogoIcon />
 				</Link>
@@ -36,7 +54,7 @@ export function Footer() {
 				<Link
 					href="mailto:alice.eriksson.561@gmail.com"
 					className={styles.socialLink}
-					aria-label="Email me"
+					aria-label={labels.email}
 				>
 					<EnvelopeClosedIcon />
 				</Link>

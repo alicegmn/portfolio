@@ -2,12 +2,51 @@
 	--color-background: #fff;
 	--color-text: #000;
 	--color-primary: #fe4629;
+	--color-primary-text: #c9321d;
+	--color-primary-on-dark: #ff6a52;
+	--color-primary-button: #c9321d;
 	--color-secondary: #4b0a23;
+	--color-border: rgb(0 0 0 / 14%);
+	--color-border-subtle: rgb(0 0 0 / 8%);
+	--color-muted: #eeeeee;
+	--color-surface: #ffffff;
+	--color-text-muted: rgb(0 0 0 / 68%);
+	--color-focus: var(--color-primary);
 
-	--font-display: var(--font-rock-3d);
+	--space-1: 0.5rem;
+	--space-2: 0.75rem;
+	--space-3: 1rem;
+	--space-4: 1.5rem;
+	--space-5: 2rem;
+	--space-6: 3rem;
+	--space-7: 4rem;
+	--space-8: 6rem;
+	--space-section: clamp(5rem, 10vw, 9rem);
+
+	--font-size-xs: 0.75rem;
+	--font-size-sm: 0.875rem;
+	--font-size-md: 1rem;
+	--font-size-lg: clamp(1.15rem, 2vw, 1.5rem);
+	--font-size-xl: clamp(1.5rem, 3vw, 2.5rem);
+	--font-size-page-title: clamp(3.5rem, 8vw, 6rem);
+	--font-size-display: clamp(3.5rem, 11vw, 9rem);
+	--line-tight: 0.95;
+	--line-body: 1.55;
+	--line-reading: 1.65;
+
+	--radius-sm: 0.75rem;
+	--radius-md: 1.25rem;
+	--radius-lg: 1.5rem;
+	--radius-pill: 999px;
+	--shadow-card: 0 0.5rem 1.5rem rgb(0 0 0 / 5%);
+	--shadow-card-hover: 0 1rem 2.5rem rgb(0 0 0 / 10%);
+	--transition-fast: 180ms ease;
+
+	--font-dm-sans: "DM Sans";
+	--font-rock-3d: "Rock 3D";
 	--font-body: var(--font-dm-sans);
 
-	--site-max-width: 1440px;
+	--site-max-width: 72rem;
 	--site-padding: clamp(1.5rem, 4vw, 3rem);
 }
 
@@ -21,18 +60,16 @@ body {
 	margin: 0;
 }
 
+h1,
+h2,
+h3,
+p,
+ul {
+	margin-block: 0;
+}
+
 body {
 	background-color: var(--color-background);
 	color: var(--color-text);
 	font-family: var(--font-body), system-ui, sans-serif;
-}
-
-a:hover {
-	text-decoration: underline;
-	text-underline-offset: 0.2em;
-	color: var(--color-primary);
-}
-
-a:active {
-	color: var(--color-primary);
 }

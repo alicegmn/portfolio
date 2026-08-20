@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import styles from "./MainNav.module.css";
@@ -17,6 +17,9 @@ type MainNavProps = Readonly<{
 export function MainNav({ items }: MainNavProps) {
 	const pathname = usePathname();
 	const [isOpen, setIsOpen] = useState(false);
+	const menuButtonRef = useRef<HTMLButtonElement>(null);
+	const navRef = useRef<HTMLElement>(null);
+	const wasOpen = useRef(false);
 
 	const isSwedish = pathname.startsWith("/sv");
 
@@ -29,10 +32,35 @@ export function MainNav({ items }: MainNavProps) {
 		}
 
 		const previousOverflow = document.body.style.overflow;
+		const firstLink = navRef.current?.querySelector<HTMLAnchorElement>("a");
+		firstLink?.focus();
 
 		function handleKeyDown(event: KeyboardEvent) {
 			if (event.key === "Escape") {
 				setIsOpen(false);
+				return;
+			}
+
+			if (event.key !== "Tab" || !navRef.current) {
+				return;
+			}
+
+			const links = Array.from(
+				navRef.current.querySelectorAll<HTMLAnchorElement>("a"),
+			);
+			const first = links[0];
+			const last = links[links.length - 1];
+
+			if (!first || !last) {
+				return;
+			}
+
+			if (event.shiftKey && document.activeElement === first) {
+				event.preventDefault();
+				last.focus();
+			} else if (!event.shiftKey && document.activeElement === last) {
+				event.preventDefault();
+				first.focus();
 			}
 		}
 
@@ -45,10 +73,23 @@ export function MainNav({ items }: MainNavProps) {
 		};
 	}, [isOpen]);
 
+	useEffect(() => {
+		if (isOpen) {
+			wasOpen.current = true;
+			return;
+		}
+
+		if (wasOpen.current) {
+			menuButtonRef.current?.focus();
+			wasOpen.current = false;
+		}
+	}, [isOpen]);
+
 	return (
 		<div className={styles.mainNavContainer}>
 			<button
 				type="button"
+				ref={menuButtonRef}
 				className={`${styles.menuButton} ${
 					isOpen ? styles.menuButtonOpen : ""
 				}`}
@@ -65,6 +106,7 @@ export function MainNav({ items }: MainNavProps) {
 			</button>
 
 			<nav
+				ref={navRef}
 				id="main-navigation"
 				className={`${styles.mainNav} ${isOpen ? styles.open : ""}`}
 				aria-label={isSwedish ? "Huvudnavigation" : "Main navigation"}

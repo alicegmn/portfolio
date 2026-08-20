@@ -13,16 +13,18 @@ type HeaderProps = {
 export function Header({ name, currentLocale, homeHref }: HeaderProps) {
 	return (
 		<header className={styles.header}>
-			<Link href={homeHref} className={styles.name}>
-				{name}
-			</Link>
+			<div className={styles.content}>
+				<Link href={homeHref} className={styles.name}>
+					{name}
+				</Link>
 
-			<div className={styles.navigation}>
-				<MainNav items={content[currentLocale].nav} />
-			</div>
+				<div className={styles.navigation}>
+					<MainNav items={content[currentLocale].nav} />
+				</div>
 
-			<div className={styles.language}>
-				<LanguageSwitcher currentLocale={currentLocale} />
+				<div className={styles.language}>
+					<LanguageSwitcher currentLocale={currentLocale} />
+				</div>
 			</div>
 		</header>
 	);

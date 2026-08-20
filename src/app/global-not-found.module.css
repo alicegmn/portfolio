@@ -1,0 +1,45 @@
+.page {
+	display: grid;
+	place-content: center;
+	align-content: center;
+	min-height: 100dvh;
+	padding: var(--site-padding);
+	background: var(--color-background);
+	color: var(--color-text);
+}
+
+.page h1 {
+	max-width: 14ch;
+	margin: var(--space-3) 0;
+	font-family: var(--font-body), system-ui, sans-serif;
+	font-size: var(--font-size-page-title);
+	font-weight: 500;
+	letter-spacing: -0.06em;
+	line-height: 0.88;
+}
+
+.page p:not(.code) {
+	max-width: 32rem;
+	margin: 0 0 var(--space-4);
+	font-size: var(--font-size-lg);
+	line-height: 1.45;
+}
+
+.code {
+	margin: 0;
+	font-size: var(--font-size-xs);
+	font-weight: 700;
+	letter-spacing: 0.12em;
+	color: var(--color-primary-text);
+}
+
+.page a {
+	color: inherit;
+	font-weight: 700;
+	text-underline-offset: 0.25em;
+}
+
+.page a:hover,
+.page a:focus-visible {
+	color: var(--color-primary-text);
+}

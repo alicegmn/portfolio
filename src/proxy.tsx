@@ -1,13 +1,13 @@
 import { NextResponse, type NextRequest } from "next/server";
 
 const locales = ["sv", "en"];
-const defaultLocale = "sv";
+const defaultLocale = "en";
 
 export function proxy(request: NextRequest) {
 	const { pathname } = request.nextUrl;
 
 	const pathnameHasLocale = locales.some(
-		(locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
+		(locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`,
 	);
 
 	if (pathnameHasLocale) {

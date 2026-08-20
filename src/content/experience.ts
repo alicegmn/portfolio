@@ -1,3 +1,9 @@
+export const selectedExperienceCompanies = [
+	"Dynamic Dog",
+	"Mercedes-Benz",
+	"Sverigehälsan",
+] as const satisfies readonly string[] & { length: 1 | 2 | 3 };
+
 export const experience = {
 	sv: {
 		heading: "CV",
@@ -9,7 +15,7 @@ export const experience = {
 					role: "Utvecklare (praktik & examensarbete)",
 					duration: "nov 2025 – juni 2026",
 					description:
-						"Arbetade i tvärfunktionella kundprojekt med dokumentation, felsökning, koordinering och digitala system.",
+						"Arbetade i kundprojekt med produktionskod, främst i TypeScript, React, Next.js och headless CMS-plattformar. Byggde och underhöll komponentbaserade lösningar, dynamiska innehållsflöden och integrationer med CMS- och API-data. Felsökte problem i applikationskod, konfiguration och innehåll med fokus på stabilitet, prestanda och långsiktig förvaltning. Bidrog till dokumentation, testning, kodgranskningar och nära samarbete med utvecklare och projektteam. Genomförde även ett självständigt examensarbete där jag migrerade en befintlig frontend från Next.js och styled-components till TanStack Start, Vite och CSS Modules.",
 				},
 				{
 					company: "Mercedes-Benz",
@@ -53,9 +59,9 @@ export const experience = {
 			heading: "Kurser & certifieringar",
 			items: [
 				{
-					title: "Google Project Management Professional Certificate",
+					title: "Google Project Management: Professional Certificate",
 					provider: "Coursera",
-					duration: "pågående 2026",
+					duration: "pågående, augusti 2026",
 				},
 				{
 					title: "Diplomerad utbildningsledare inom yrkeshögskolan",
@@ -73,6 +79,14 @@ export const experience = {
 					duration: "2022",
 				},
 			],
+		},
+		technologies: {
+			heading: "Teknologier",
+			text: "Jag arbetar främst med JavaScript, TypeScript, React, Next.js, Node.js, Express, PostgreSQL, Storyblok, Tailwind CSS, GitHub Actions och Azure.",
+		},
+		waysOfWorking: {
+			heading: "Arbetssätt & metoder",
+			text: "Jag uppskattar agila arbetssätt där struktur, tydlig kommunikation och kontinuerlig återkoppling hjälper team att lösa problem och skapa värde för användare och verksamhet.",
 		},
 	},
 	en: {
@@ -129,9 +143,9 @@ export const experience = {
 			heading: "Courses & Certifications",
 			items: [
 				{
-					title: "Google Project Management Professional Certificate",
+					title: "Google Project Management: Professional Certificate",
 					provider: "Coursera",
-					duration: "in progress, 2026",
+					duration: "in progress, august 2026",
 				},
 				{
 					title: "Certified vocational education coordinator",
@@ -149,6 +163,14 @@ export const experience = {
 					duration: "2022",
 				},
 			],
+		},
+		technologies: {
+			heading: "Technologies",
+			text: "I mainly work with JavaScript, TypeScript, React, Next.js, Node.js, Express, PostgreSQL, Storyblok, Tailwind CSS, GitHub Actions and Azure.",
+		},
+		waysOfWorking: {
+			heading: "Ways of Working & Methods",
+			text: "I value agile ways of working where structure, clear communication and continuous feedback help teams solve problems and create value for users and organisations.",
 		},
 	},
 } as const;

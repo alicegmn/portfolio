@@ -1,8 +1,17 @@
 import type { Metadata } from "next";
+import type { ReactNode } from "react";
 import { notFound } from "next/navigation";
 
-import { getPageKey, isLocale, locales, pageSlugs } from "@/content/content";
+import {
+	content,
+	getPageKey,
+	isLocale,
+	locales,
+	pageSlugs,
+	routes,
+} from "@/content/content";
 import { getProject, projectSlugs } from "@/content/projects";
+import { Breadcrumbs } from "@/components/layout/Breadcrumbs/Breadcrumbs";
 
 import { AboutPage } from "@/components/pages/AboutPage/AboutPage";
 import { ContactPage } from "@/components/pages/ContactPage/ContactPage";
@@ -94,22 +103,46 @@ export default async function DynamicPage({ params }: PageProps) {
 	const pageKey = getPageKey(locale, pageSlug);
 
 	if (slug.length === 1) {
+		let page: ReactNode;
+
 		switch (pageKey) {
 			case "projects":
-				return <ProjectsPage locale={locale} />;
+				page = <ProjectsPage locale={locale} />;
+				break;
 
 			case "about":
-				return <AboutPage locale={locale} />;
+				page = <AboutPage locale={locale} />;
+				break;
 
 			case "experience":
-				return <ExperiencePage locale={locale} />;
+				page = <ExperiencePage locale={locale} />;
+				break;
 
 			case "contact":
-				return <ContactPage locale={locale} />;
+				page = <ContactPage locale={locale} />;
+				break;
 
 			default:
 				notFound();
 		}
+
+		return (
+			<>
+				<Breadcrumbs
+					ariaLabel={locale === "sv" ? "Brödsmulor" : "Breadcrumbs"}
+					items={[
+						{
+							label: content[locale].breadcrumbs.home,
+							href: routes[locale].home,
+						},
+						{
+							label: content[locale].breadcrumbs[pageKey],
+						},
+					]}
+				/>
+				{page}
+			</>
+		);
 	}
 
 	if (slug.length === 2 && pageKey === "projects" && projectSlug) {
@@ -119,7 +152,25 @@ export default async function DynamicPage({ params }: PageProps) {
 			notFound();
 		}
 
-		return <ProjectPage project={project} locale={locale} />;
+		return (
+			<>
+				<Breadcrumbs
+					ariaLabel={locale === "sv" ? "Brödsmulor" : "Breadcrumbs"}
+					items={[
+						{
+							label: content[locale].breadcrumbs.home,
+							href: routes[locale].home,
+						},
+						{
+							label: content[locale].breadcrumbs.projects,
+							href: routes[locale].projects,
+						},
+						{ label: project.title },
+					]}
+				/>
+				<ProjectPage project={project} locale={locale} />
+			</>
+		);
 	}
 
 	notFound();
