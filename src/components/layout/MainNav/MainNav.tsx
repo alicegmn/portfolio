@@ -48,8 +48,12 @@ export function MainNav({ items }: MainNavProps) {
 			const links = Array.from(
 				navRef.current.querySelectorAll<HTMLAnchorElement>("a"),
 			);
-			const first = links[0];
-			const last = links[links.length - 1];
+			const focusableElements = [menuButtonRef.current, ...links].filter(
+				(element): element is HTMLButtonElement | HTMLAnchorElement =>
+					element !== null,
+			);
+			const first = focusableElements[0];
+			const last = focusableElements[focusableElements.length - 1];
 
 			if (!first || !last) {
 				return;
