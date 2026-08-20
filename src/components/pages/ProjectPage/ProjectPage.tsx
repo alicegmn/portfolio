@@ -13,22 +13,34 @@ export function ProjectPage({ project, locale }: ProjectPageProps) {
 	return (
 		<article className={styles.project}>
 			<header className={styles.hero}>
-				<p className={styles.category}>{project.category}</p>
-				<h1 className={styles.title}>{project.title}</h1>
-				<p className={styles.summary}>{project.summary}</p>
+				<div className={styles.heroContent}>
+					<p className={styles.eyebrow}>/ {project.category}</p>
+					<h1 className={styles.title}>{project.title}</h1>
+					<p className={styles.summary}>{project.summary}</p>
 
-				<div className={styles.links}>
-					{project.links.live && (
-						<Link href={project.links.live} className={styles.primaryLink}>
-							{locale === "sv" ? "Besök projektet" : "View live"}
-						</Link>
-					)}
+					<div className={styles.links}>
+						{project.links.live && (
+							<Link
+								href={project.links.live}
+								className={styles.primaryLink}
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								{locale === "sv" ? "Besök projektet" : "View live"}
+							</Link>
+						)}
 
-					{project.links.github && (
-						<Link href={project.links.github} className={styles.secondaryLink}>
-							GitHub
-						</Link>
-					)}
+						{project.links.github && (
+							<Link
+								href={project.links.github}
+								className={styles.secondaryLink}
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								GitHub
+							</Link>
+						)}
+					</div>
 				</div>
 
 				<Image
@@ -43,7 +55,7 @@ export function ProjectPage({ project, locale }: ProjectPageProps) {
 
 			<section className={styles.facts}>
 				<div>
-					<h2>{locale === "sv" ? "Min roll" : "My role"}</h2>
+					<h2>{locale === "sv" ? "Roll" : "Role"}</h2>
 					<p>{project.role}</p>
 				</div>
 
@@ -97,7 +109,7 @@ export function ProjectPage({ project, locale }: ProjectPageProps) {
 					<h2>{challenge.title}</h2>
 					<p>{challenge.description}</p>
 
-					<h3>{locale === "sv" ? "Så löste jag det" : "Solution"}</h3>
+					<h3>{locale === "sv" ? "Lösning" : "Solution"}</h3>
 					<p>{challenge.solution}</p>
 				</section>
 			))}

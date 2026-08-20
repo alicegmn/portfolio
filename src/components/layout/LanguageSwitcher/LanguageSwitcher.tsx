@@ -15,7 +15,10 @@ export function LanguageSwitcher({ currentLocale }: LanguageSwitcherProps) {
 	const enPath = getLocalizedPath(pathname, currentLocale, "en");
 
 	return (
-		<nav className={styles.languageSwitcher} aria-label="Language">
+		<nav
+			className={styles.languageSwitcher}
+			aria-label={currentLocale === "sv" ? "Språk" : "Language"}
+		>
 			<Link
 				href={svPath}
 				className={currentLocale === "sv" ? styles.active : undefined}

@@ -1,4 +1,5 @@
 import { experience } from "./experience";
+import { about } from "./about";
 
 export const locales = ["sv", "en"] as const;
 
@@ -88,21 +89,65 @@ export const content = {
 		email: "alice.eriksson.561@gmail.com",
 		github: "https://github.com/alicegmn",
 		linkedin: "https://www.linkedin.com/in/alice-eriksson-malmo/",
-		discord: "https://discord.com/users/1200463637702250596",
 	},
 
 	sv: {
 		meta: {
-			title: "Alice Eriksson",
+			title: "Alice Eriksson – Fullstackutvecklare i Malmö",
 			description:
 				"Fullstackutvecklare, kommunikatör och digital problemlösare.",
 			openGraphLocale: "sv_SE",
 		},
+		breadcrumbs: {
+			home: "Hem",
+			projects: "Projekt",
+			about: "Om mig",
+			experience: "CV",
+			contact: "Kontakt",
+		},
 
 		home: {
-			headline: "Fullstackutvecklare, kommunikatör och digital problemlösare.",
+			headline: "Digital problemlösare med människan i fokus.",
 			description:
-				"Just nu: Examensprojekt på Dynamic Dog i Malmö. Tillgängling för nya uppdrag: från och med juni 2026.",
+				"Jag gillar digitalisering som märks i vardagen – när den förenklar, effektiviserar och skapar värde för människor.",
+			sections: {
+				selectedProjects: {
+					heading: "Utvalda projekt",
+					intro:
+						"Ett urval av lösningar där teknik, struktur och användare möts.",
+					linkText: "Visa alla projekt",
+				},
+				skills: {
+					heading: "Kompetensområden",
+					items: [
+						{
+							title: "Frontend och fullstack",
+							text: "TypeScript, JavaScript, React, Next.js och Node.js.",
+						},
+						{
+							title: "Backend & data",
+							text: "Express, PostgreSQL, REST-API:er och integrationer.",
+						},
+						{
+							title: "Innehåll & leverans",
+							text: "Headless CMS, Docker, Azure, GitHub Actions och CI/CD.",
+						},
+					],
+				},
+				about: {
+					heading: "Om mig",
+					linkText: "Läs mer om mig",
+				},
+				experience: {
+					heading: "Erfarenhet",
+					linkText: "Se hela erfarenheten",
+				},
+				contact: {
+					heading: "Låt oss göra något tillsammans!",
+					text: "Jag söker jobb eller uppdrag inom utveckling och IT i Malmö med omnejd. Jag prioriterar utvecklar- och IT-roller, men är öppen för relevanta roller där min bakgrund kommer till sin rätt. Tillgänglig omgående.",
+					linkText: "Ta kontakt",
+				},
+			},
 		},
 
 		projects: {
@@ -112,28 +157,13 @@ export const content = {
 		},
 
 		about: {
-			title:
-				"Jag bygger digitala lösningar med känsla för både kod, innehåll och användare.",
-			intro:
-				"Jag är en fullstackutvecklare med bakgrund inom kommunikation, marknadsföring och IT-support. Jag gillar att bygga lösningar där teknik, struktur och användarupplevelse hänger ihop.",
-			sections: [
-				{
-					title: "Bakgrund",
-					text: "Innan jag började utveckla arbetade jag flera år med digital kommunikation och webb. Det har gett mig en stark förståelse för innehåll, målgrupper och hur digitala produkter faktiskt används.",
-				},
-				{
-					title: "Teknik",
-					text: "Jag arbetar främst med JavaScript, TypeScript, React, Next.js, Node.js och moderna CMS-lösningar som Storyblok och Optimizely.",
-				},
-				{
-					title: "Just nu",
-					text: "Just nu gör jag mitt examensprojekt på Dynamic Dog i Malmö och tar examen som fullstackutvecklare våren 2026.",
-				},
-			],
+			...about.sv,
 		},
 
 		contact: {
-			heading: "Du når mig här!",
+			heading: "Hör gärna av dig",
+			description:
+				"Jag söker jobb eller uppdrag inom utveckling och IT i Malmö med omnejd. Jag prioriterar roller som utvecklare eller inom IT, men är också öppen för andra roller där min bakgrund inom kommunikation, support och digitala projekt är relevant. Jag är tillgänglig omgående.",
 		},
 
 		experience: experience.sv,
@@ -157,17 +187,61 @@ export const content = {
 
 	en: {
 		meta: {
-			title: "Alice Eriksson",
+			title: "Alice Eriksson - Full-stack developer in Malmö",
 			description:
 				"Full-stack developer, communicator, and digital problem solver.",
 			openGraphLocale: "en_US",
 		},
+		breadcrumbs: {
+			home: "Home",
+			projects: "Projects",
+			about: "About",
+			experience: "Experience",
+			contact: "Contact",
+		},
 
 		home: {
-			headline:
-				"Full-stack developer, communications specialist, and digital problem solver.",
+			headline: "Digital problem solver with a human-first approach.",
 			description:
-				"Currently: Degree project at Dynamic Dog in Malmö. Available for new assignments: starting June 2026.",
+				"I’m drawn to digitalisation that makes a difference in everyday life – when it simplifies, streamlines, and creates value for people.",
+			sections: {
+				selectedProjects: {
+					heading: "Selected projects",
+					intro:
+						"A selection of solutions where technology, structure and people meet.",
+					linkText: "View all projects",
+				},
+				skills: {
+					heading: "Areas of expertise",
+					items: [
+						{
+							title: "Frontend & full-stack",
+							text: "TypeScript, JavaScript, React, Next.js and Node.js.",
+						},
+						{
+							title: "Backend & data",
+							text: "Express, PostgreSQL, REST APIs and integrations.",
+						},
+						{
+							title: "Content & delivery",
+							text: "Headless CMS, Docker, Azure, GitHub Actions and CI/CD.",
+						},
+					],
+				},
+				about: {
+					heading: "About me",
+					linkText: "Read more about me",
+				},
+				experience: {
+					heading: "Experience",
+					linkText: "View full experience",
+				},
+				contact: {
+					heading: "Let’s create something together!",
+					text: "I’m looking for a job or project opportunity in development or IT in Malmö and the surrounding area. I prioritise developer and IT roles, while staying open to relevant opportunities. Available immediately.",
+					linkText: "Get in touch",
+				},
+			},
 		},
 
 		projects: {
@@ -177,28 +251,13 @@ export const content = {
 		},
 
 		about: {
-			title:
-				"I build digital solutions with an eye for code, content, and people.",
-			intro:
-				"I’m a full-stack developer with a background in communications, marketing, and IT support. I enjoy building solutions where technology, structure, and user experience work together.",
-			sections: [
-				{
-					title: "Background",
-					text: "Before moving into development, I worked for several years with digital communication and web. That experience helps me think beyond code and understand content, users, and real-world needs.",
-				},
-				{
-					title: "Tech",
-					text: "I mainly work with JavaScript, TypeScript, React, Next.js, Node.js, and modern CMS platforms like Storyblok and Optimizely.",
-				},
-				{
-					title: "Right now",
-					text: "I’m currently doing my degree project at Dynamic Dog in Malmö and graduating as a full-stack developer in spring 2026.",
-				},
-			],
+			...about.en,
 		},
 
 		contact: {
-			heading: "Get in touch!",
+			heading: "Get in touch",
+			description:
+				"I’m looking for a job or project opportunity in development or IT in Malmö and the surrounding area. I prioritise developer and IT roles, but I’m also open to other opportunities where my background in communication, support, and digital projects is relevant. I’m available immediately.",
 		},
 
 		experience: experience.en,

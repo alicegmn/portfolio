@@ -1,4 +1,5 @@
 import { content, type Locale } from "@/content/content";
+import { IntroSection } from "@/components/IntroSection/IntroSection";
 import styles from "./ExperiencePage.module.css";
 
 type ExperiencePageProps = Readonly<{
@@ -10,12 +11,10 @@ export function ExperiencePage({ locale }: ExperiencePageProps) {
 
 	return (
 		<section className={styles.page}>
-			<header className={styles.header}>
-				<p className={styles.eyebrow}>
-					/ {locale === "sv" ? "cv" : "experience"}
-				</p>
-				<h1>{experience.heading}</h1>
-			</header>
+			<IntroSection
+				eyebrow={`/ ${locale === "sv" ? "cv" : "experience"}`}
+				title={experience.heading}
+			/>
 
 			<section className={styles.section}>
 				<div className={styles.sectionHeader}>
@@ -68,6 +67,22 @@ export function ExperiencePage({ locale }: ExperiencePageProps) {
 					</article>
 				))}
 				</div>
+			</section>
+
+			<section className={styles.section}>
+				<div className={styles.sectionHeader}>
+					<h2>{experience.technologies.heading}</h2>
+					<span>04</span>
+				</div>
+				<p className={styles.technologyText}>{experience.technologies.text}</p>
+			</section>
+
+			<section className={styles.section}>
+				<div className={styles.sectionHeader}>
+					<h2>{experience.waysOfWorking.heading}</h2>
+					<span>05</span>
+				</div>
+				<p className={styles.technologyText}>{experience.waysOfWorking.text}</p>
 			</section>
 		</section>
 	);

@@ -2,27 +2,26 @@
 	position: sticky;
 	top: 0;
 	z-index: 100;
+	width: calc(100% + var(--site-padding) * 2);
+	margin-inline: calc(var(--site-padding) * -1);
+	background-color: var(--color-secondary);
+	color: var(--color-surface);
+}
 
-	display: grid;
-	grid-template-columns:
-		minmax(0, 1fr)
-		auto
-		minmax(0, 1fr);
-	align-items: center;
-	gap: clamp(1rem, 3vw, 3rem);
-
+.content {
+	margin-inline: auto;
+	padding: var(--space-3) var(--site-padding);
 	width: 100%;
-	padding-block: 1rem;
-	margin-bottom: 1rem;
-
-	background-color: var(--color-background, #ffffff);
+	max-width: calc(var(--site-max-width) + var(--site-padding) * 2);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
 .name {
 	justify-self: start;
-
 	color: inherit;
-	font-family: var(--font-display), system-ui, sans-serif;
+	font-family: var(--font-rock-3d), system-ui, sans-serif;
 	font-size: clamp(1rem, 2.2vw, 2rem);
 	line-height: 1;
 	text-decoration: none;
@@ -31,8 +30,8 @@
 
 .name:hover,
 .name:focus-visible {
-	text-decoration: underline;
-	text-underline-offset: 0.2em;
+	text-decoration: none;
+	color: var(--color-primary-on-dark);
 }
 
 .name:focus-visible {
@@ -45,30 +44,20 @@
 	min-width: 0;
 }
 
-.language {
-	justify-self: end;
-}
-
 /* Mobil */
 @media (max-width: 48rem) {
-	.header {
-		grid-template-columns: minmax(0, 1fr) auto;
-		gap: 1rem;
-
-		/*
-		 * Lämnar plats för hamburgarknappen,
-		 * som ligger fixed i högra hörnet.
-		 */
-		padding-right: 4.5rem;
+	.content {
+		padding-right: var(--site-padding);
 	}
 
 	.navigation {
 		position: absolute;
 		top: 0;
-		right: 0;
-
-		width: 0;
-		height: 0;
+		right: var(--site-padding);
+		display: grid;
+		width: 3rem;
+		height: 100%;
+		place-items: center;
 	}
 
 	.name {
@@ -76,6 +65,6 @@
 	}
 
 	.language {
-		justify-self: end;
+		margin-right: calc(var(--site-padding) * 3);
 	}
 }

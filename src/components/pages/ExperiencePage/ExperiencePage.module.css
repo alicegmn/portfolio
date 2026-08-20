@@ -1,93 +1,72 @@
 .page {
 	display: flex;
 	flex-direction: column;
-	gap: clamp(3.5rem, 8vw, 7rem);
+	gap: var(--space-section);
 	width: 100%;
-	max-width: 70rem;
-	padding-block: clamp(2rem, 6vw, 5rem) clamp(3rem, 8vw, 7rem);
+	max-width: var(--site-max-width);
+	padding-block: var(--space-7) var(--space-8);
 }
 
-.header {
-	display: grid;
-	gap: 1rem;
-	max-width: 50rem;
-}
-
-.eyebrow,
 .sectionHeader span,
 .duration {
-	font-size: 0.75rem;
+	font-size: var(--font-size-xs);
 	font-weight: 700;
 	letter-spacing: 0.12em;
 	line-height: 1.2;
 	text-transform: uppercase;
 }
 
-.eyebrow {
-	margin: 0;
-	color: var(--color-primary);
-}
-
-.header h1 {
-	margin: 0;
-	font-family: var(--font-display), system-ui, sans-serif;
-	font-size: clamp(4rem, 11vw, 9rem);
-	font-weight: 400;
-	letter-spacing: -0.06em;
-	line-height: 0.85;
-}
-
 .section {
 	display: grid;
-	gap: 1.5rem;
+	gap: var(--space-4);
 }
 
 .sectionHeader {
 	display: flex;
 	align-items: baseline;
 	justify-content: space-between;
-	gap: 1rem;
-	padding-bottom: 0.85rem;
-	border-bottom: 1px solid color-mix(in srgb, var(--color-text) 25%, transparent);
+	gap: var(--space-3);
+	padding-bottom: var(--space-3);
+	border-bottom: 1px solid var(--color-border);
 }
 
 .sectionHeader h2 {
 	margin: 0;
-	font-size: clamp(1.5rem, 3vw, 2.5rem);
+	font-size: var(--font-size-xl);
 	font-weight: 500;
 	letter-spacing: -0.03em;
 	line-height: 1;
 }
 
 .sectionHeader span {
-	color: var(--color-primary);
+	color: var(--color-primary-text);
 }
 
 .experienceList {
 	display: grid;
-	gap: 1rem;
+	gap: var(--space-3);
 }
 
 .experienceItem,
 .card {
-	border: 1px solid var(--color-border, #d8d8d8);
-	border-radius: 1.25rem;
-	background: var(--color-surface, #ffffff);
-	box-shadow: 0 0.5rem 1.5rem rgb(0 0 0 / 5%);
+	border: 1px solid var(--color-border);
+	border-radius: var(--radius-md);
+	background: var(--color-surface);
+	box-shadow: var(--shadow-card);
 }
 
 .experienceItem {
 	display: grid;
 	grid-template-columns: minmax(10rem, 0.32fr) minmax(0, 1fr);
-	gap: clamp(1.5rem, 5vw, 5rem);
-	padding: clamp(1.25rem, 3vw, 2.25rem);
+	gap: var(--space-7);
+	padding: var(--space-5);
 }
 
 .itemMeta,
 .itemContent {
 	display: grid;
 	align-content: start;
-	gap: 0.45rem;
+	gap: var(--space-1);
 }
 
 .itemMeta p,
@@ -104,13 +83,13 @@
 
 .duration {
 	margin: 0;
-	color: var(--color-primary);
+	color: var(--color-primary-text);
 }
 
 .itemContent h3,
 .card h3 {
 	margin: 0;
-	font-size: clamp(1.25rem, 2.2vw, 1.75rem);
+	font-size: var(--font-size-lg);
 	font-weight: 500;
 	letter-spacing: -0.02em;
 	line-height: 1.1;
@@ -118,22 +97,22 @@
 
 .itemContent p {
 	max-width: 52rem;
-	font-size: 1rem;
-	line-height: 1.65;
+	font-size: var(--font-size-md);
+	line-height: var(--line-reading);
 }
 
 .cardGrid {
 	display: grid;
 	grid-template-columns: repeat(2, minmax(0, 1fr));
-	gap: 1rem;
+	gap: var(--space-3);
 }
 
 .card {
 	display: grid;
 	align-content: start;
-	gap: 0.65rem;
+	gap: var(--space-2);
 	min-height: 10rem;
-	padding: clamp(1.25rem, 3vw, 2rem);
+	padding: var(--space-5);
 	transition: transform 180ms ease, border-color 180ms ease,
 		box-shadow 180ms ease;
 }
@@ -141,13 +120,25 @@
 .card:hover {
 	transform: translateY(-0.2rem);
 	border-color: var(--color-text);
-	box-shadow: 0 1rem 2rem rgb(0 0 0 / 9%);
+	box-shadow: var(--shadow-card-hover);
+}
+
+.technologyText {
+	max-width: 52rem;
+	margin: 0;
+	font-size: var(--font-size-lg);
+	line-height: var(--line-reading);
+	color: var(--color-text-muted);
 }
 
 @media (max-width: 48rem) {
+	.page {
+		padding-block: var(--space-5) var(--space-7);
+	}
+
 	.experienceItem {
 		grid-template-columns: 1fr;
-		gap: 1rem;
+		gap: var(--space-3);
 	}
 
 	.cardGrid {

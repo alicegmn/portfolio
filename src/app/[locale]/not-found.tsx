@@ -3,6 +3,7 @@
 import { content, isLocale } from "@/content/content";
 import Link from "next/link";
 import { useParams } from "next/navigation";
+import styles from "./not-found.module.css";
 
 export default function NotFound() {
 	const params = useParams<{ locale: string }>();
@@ -11,8 +12,8 @@ export default function NotFound() {
 	const notFoundContent = content[locale].notFound;
 
 	return (
-		<section>
-			<p style={{ fontFamily: "var(--font-rock-3d)" }}>404</p>
+		<section className={styles.page}>
+			<p className={styles.code}>404</p>
 			<h1>{notFoundContent.headline}</h1>
 			<p>{notFoundContent.message}</p>
 			<Link href={`/${locale}`}>{notFoundContent.linkText}</Link>

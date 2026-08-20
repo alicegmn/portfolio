@@ -1,8 +1,19 @@
 import type { Locale } from "./content";
 
-export const projectSlugs = ["pax"] as const;
+export const projectSlugs = [
+	"pax",
+	"dynamic-dog",
+	"logivance",
+	"dara",
+] as const;
 
 export type ProjectSlug = (typeof projectSlugs)[number];
+
+export const selectedProjectSlugs = [
+	"dynamic-dog",
+	"logivance",
+	"pax",
+] as const satisfies readonly ProjectSlug[] & { length: 1 | 2 | 3 };
 
 export type Project = {
 	title: string;
@@ -44,7 +55,7 @@ export const projects = {
 			role: "Backendutvecklare",
 			team: "Tvärfunktionellt team med backend, frontend och IoT",
 			image: {
-				src: "/projects/pax/hero.webp",
+				src: "https://raw.githubusercontent.com/alicegmn/paxdb/refs/heads/main/PAX.png",
 				alt: "Översikt av PAX rumsbokningssystem",
 			},
 			technologies: [
@@ -56,7 +67,7 @@ export const projects = {
 				"Swagger",
 			],
 			links: {
-				github: "https://github.com/...",
+				github: "https://github.com/alicegmn/paxdb",
 			},
 			problem:
 				"Mötesrum kan vara bokade trots att ingen använder dem, samtidigt som andra användare inte hittar ett ledigt rum.",
@@ -92,6 +103,177 @@ export const projects = {
 				"Att dokumentera och kommunicera API-kontrakt.",
 			],
 		},
+		"dynamic-dog": {
+			title: "Optimering av dynamicdog.se",
+			summary:
+				"Migrering från Next.js och styled components till TanStack Start och CSS modules samt prestandeoptimering med Lighthouse.",
+			category: "Frontendarkitektur",
+			period: "2026",
+			role: "Frontendutveckling",
+			image: {
+				src: "/projects/dynamic-dog.png",
+				alt: "Skärmbild av Dynamic Dogs webbplats",
+			},
+			technologies: ["TanStack Start", "Storyblok", "TypeScript", "Lighthouse"],
+			links: {},
+			problem:
+				"Projektet undersöker hur en ny frontend-arkitektur i TanStack Start kan jämföras med den nuvarande lösningen, med särskilt fokus på prestandaoptimering mot Lighthouse.",
+			solution:
+				"Resultatet blev en ny frontendarkitektur byggd med TanStack Start, en Lighthouse-rapport där lösningen uppnådde över 90 poäng i samtliga kategorier samt en dokumenterad jämförelse mellan den befintliga och den nya lösningen.",
+			responsibilities: [
+				"Bygga upp en ny frontend-arkitektur i TanStack Start.",
+				"Behålla integration med Storyblok.",
+				"Optimering mot Lighthouse på desktop och mobil.",
+				"Jämföra nuvarande och ny lösning.",
+				"Föreslå förbättringar och nya features.",
+			],
+			technicalHighlights: [
+				"TanStack Start.",
+				"Storyblok-integration.",
+				"Lighthouse-optimering för desktop och mobil.",
+			],
+			challenges: [],
+			result:
+				"Resultatet blev en ny frontendarkitektur byggd med TanStack Start, en Lighthouse-rapport där lösningen uppnådde över 90 poäng i samtliga kategorier samt en dokumenterad jämförelse mellan den befintliga och den nya lösningen.",
+			learnings: [
+				"Att arbeta med TanStack Start.",
+				"Att utvärdera frontendlösningar med Lighthouse.",
+				"Att behålla en befintlig Storyblok-integration vid arkitekturarbete.",
+			],
+		},
+		logivance: {
+			title: "Logivance",
+			summary:
+				"En logistikplattform för klimatkontrollerade leveranser med rollanpassade gränssnitt för administratörer, kunder och förare.",
+			category: "Skolprojekt",
+			period: "2025",
+			role: "Frontendutvecklare",
+			team: "Tvärfunktionellt team med UX-designer samt backend-, frontend- och embeddedutvecklare.",
+			image: {
+				src: "/projects/logivance.png",
+				alt: "Skärmbild av Logivances inloggningssida",
+			},
+			technologies: [
+				"React",
+				"TypeScript",
+				"React Router",
+				"Tailwind CSS",
+				"Vite",
+				"Vitest",
+				"React Testing Library",
+				"GitHub Actions",
+				"Azure Static Web Apps",
+			],
+			links: {
+				github: "https://github.com/Chas-Advance-Grupp-4/frontend",
+			},
+			problem:
+				"Transporter av temperatur- och fuktkänsliga varor kräver att leveransstatus, leveransinformation och aktuella klimatvärden kan följas genom logistikkedjan. Olika användargrupper behöver samtidigt tillgång till olika delar av informationen.",
+			solution:
+				"Vi utvecklade tre rollanpassade frontendapplikationer för administratörer, kunder och förare. Plattformen gör det möjligt att följa leveranser, visa aktuell temperatur och luftfuktighet, se leveranshistorik, skanna QR-koder och uppdatera paketstatus genom logistikflödet.",
+			responsibilities: [
+				"Utvecklade funktionalitet i React-applikationerna för administratörer, kunder och förare.",
+				"Arbetade med autentisering, JWT-hantering, skyddade routes och rollbaserade användarflöden.",
+				"Byggde vyer för paketöversikter, leveranser, leveransdetaljer, historik och tilldelade transporter.",
+				"Integrerade frontendapplikationerna med backend-API:er för användare, leveranser, klimatvärden och statusuppdateringar.",
+				"Implementerade funktionalitet för QR-koder och QR-skanning i kund- och förarflöden.",
+				"Arbetade med automatiserade tester med Vitest och React Testing Library.",
+				"Bidrog till GitHub Actions-workflows för linting, typkontroll, testning och build.",
+				"Bidrog till ett gemensamt Azure Static Web Apps-workflow för distribution av samtliga frontendapplikationer.",
+				"Samarbetade med backend-, embedded- och UX-kompetenser för att koppla samman användargränssnittet med resten av systemet.",
+			],
+			technicalHighlights: [
+				"Tre separata React- och TypeScript-applikationer för administratörer, kunder och förare.",
+				"Rollbaserad routing och skyddade routes med React Router.",
+				"Responsiva gränssnitt byggda med Tailwind CSS.",
+				"Visning av aktuell temperatur och luftfuktighet med kontroll mot tillåtna gränsvärden.",
+				"Leveransstatusar för bland annat skapad, tilldelad, pågående, levererad och avbruten leverans.",
+				"QR-koder och QR-skanning för identifiering och statusuppdatering av försändelser.",
+				"Automatiserade komponent- och användartester med Vitest och React Testing Library.",
+				"Ett gemensamt GitHub Actions-workflow med matrix-strategi för samtliga frontendapplikationer.",
+				"Automatiserad distribution till staging-, produktions- och förhandsgranskningsmiljöer i Azure Static Web Apps.",
+				"Automatisk stängning av förhandsgranskningsmiljöer när en pull request avslutades.",
+			],
+			challenges: [
+				{
+					title: "Gemensam leveransprocess för tre frontendapplikationer",
+					description:
+						"Admin-, kund- och förargränssnittet behövde byggas och distribueras separat. Flera fristående workflowfiler hade skapat duplicerad kod och ökat risken för att apparna hanterades olika.",
+					solution:
+						"Vi skapade ett gemensamt GitHub Actions-workflow med en matrix-strategi där varje frontend byggdes och distribuerades i en isolerad körning. Workflowet stödde staging, produktion och pull request-baserade förhandsgranskningar samt stängde preview-miljöer automatiskt när en pull request avslutades.",
+				},
+				{
+					title: "Olika användarroller och arbetsflöden",
+					description:
+						"Administratörer, kunder och förare behövde olika vyer, behörigheter och funktioner inom samma logistikkedja.",
+					solution:
+						"Vi använde gemensam autentiseringslogik och rollbaserade skyddade routes, samtidigt som varje frontend fick egna vyer och användarflöden anpassade efter sin roll.",
+				},
+			],
+			result:
+				"Resultatet blev tre rollanpassade frontendapplikationer som stödjer olika delar av logistikflödet, från paketöversikter och leveranshistorik till tilldelade transporter, QR-skanning och statusuppdateringar. Den gemensamma CI/CD-strukturen gjorde distributionen mer enhetlig och enklare att underhålla.",
+			learnings: [
+				"Att strukturera och vidareutveckla flera sammanhängande React-applikationer.",
+				"Att bygga rollbaserade användarflöden med autentisering och skyddade routes.",
+				"Att integrera frontend med API:er för leverans-, status- och klimatdata.",
+				"Att implementera QR-baserade flöden för identifiering av försändelser.",
+				"Att skriva tester med Vitest och React Testing Library.",
+				"Att automatisera build och distribution med GitHub Actions och Azure Static Web Apps.",
+				"Att samarbeta i ett tvärfunktionellt system med frontend, backend, embedded och UX.",
+			],
+		},
+		dara: {
+			title: "Dara Music App",
+			summary:
+				"En modern musikapplikation byggd med Spotify API:t, med realtidssökning, favorithantering och användarvänlig navigering.",
+			category: "Skolprojekt",
+			period: "2025",
+			role: "Frontendutvecklare",
+			image: {
+				src: "/projects/dara.png",
+				alt: "Dara Music App",
+			},
+			technologies: [
+				"React",
+				"TypeScript",
+				"React Router",
+				"Zustand",
+				"Tailwind CSS",
+				"Spotify API",
+			],
+			links: {
+				github: "https://github.com/alicegmn/dara",
+			},
+			problem:
+				"Användare behöver kunna upptäcka musik, söka efter artister och låtar samt spara favoriter i en sammanhängande och lättanvänd applikation.",
+			solution:
+				"Vi byggde en responsiv musikapplikation med Spotify OAuth, debounced realtidssökning, visning av topplistor och favorithantering som sparas i localStorage.",
+			responsibilities: [
+				"Utvecklade användargränssnittet i React och TypeScript.",
+				"Implementerade routing för startsida, favoriter, artistvyer och inloggning.",
+				"Byggde realtidssökning för artister och låtar med debouncing.",
+				"Implementerade Spotify OAuth 2.0 för autentisering.",
+				"Byggde funktionalitet för att lägga till och ta bort favoritlåtar.",
+				"Samarbetade i ett gemensamt projekt med fokus på en modulär och skalbar struktur.",
+			],
+			technicalHighlights: [
+				"React och TypeScript med komponentbaserad arkitektur.",
+				"Spotify OAuth 2.0 och Spotify Web API.",
+				"React Router för navigering mellan applikationens vyer.",
+				"Zustand för autentiseringsstatus och global favorithantering.",
+				"Tailwind CSS för ett responsivt och tillgängligt gränssnitt.",
+				"localStorage för att spara användarens favoritlåtar mellan sessioner.",
+			],
+			challenges: [],
+			result:
+				"Resultatet blev en fungerande musikapplikation där användare kan logga in med Spotify, söka efter musik, utforska artister och låtar samt hantera sina favoriter.",
+			learnings: [
+				"Att integrera en extern API-tjänst med OAuth-autentisering.",
+				"Att hantera global state med Zustand.",
+				"Att bygga responsiva och tillgängliga React-gränssnitt.",
+				"Att strukturera en större frontendapplikation med återanvändbara komponenter.",
+			],
+		},
 	},
 
 	en: {
@@ -104,7 +286,7 @@ export const projects = {
 			role: "Backend developer",
 			team: "Cross-functional backend, frontend and IoT team",
 			image: {
-				src: "/projects/pax/hero.webp",
+				src: "https://raw.githubusercontent.com/alicegmn/paxdb/refs/heads/main/PAX.png",
 				alt: "Overview of the PAX room-booking system",
 			},
 			technologies: [
@@ -116,7 +298,7 @@ export const projects = {
 				"Swagger",
 			],
 			links: {
-				github: "https://github.com/...",
+				github: "https://github.com/alicegmn/paxdb",
 			},
 			problem:
 				"Meeting rooms can remain booked even when they are not being used.",
@@ -148,6 +330,177 @@ export const projects = {
 				"Structuring a larger TypeScript API.",
 				"Working across several technical areas.",
 				"Documenting and communicating API contracts.",
+			],
+		},
+		"dynamic-dog": {
+			title: "Optimization of dynamicdog.se",
+			summary:
+				"Migration from Next.js and styled-components to TanStack Start and CSS Modules, along with performance optimisation using Lighthouse.",
+			category: "Degree project",
+			period: "2026",
+			role: "Frontend development",
+			image: {
+				src: "/projects/dynamic-dog.png",
+				alt: "Dynamic Dog website screenshot.",
+			},
+			technologies: ["TanStack Start", "Storyblok", "TypeScript", "Lighthouse"],
+			links: {},
+			problem:
+				"The project explores how a new frontend architecture in TanStack Start can be compared with the current solution, with a particular focus on performance optimisation for Lighthouse.",
+			solution:
+				"The new architecture retains the Storyblok integration and is optimised for Lighthouse on both desktop and mobile.",
+			responsibilities: [
+				"Build a new frontend architecture with TanStack Start.",
+				"Retain the Storyblok integration.",
+				"Lighthouse optimisation for desktop and mobile.",
+				"Compare the current and new solutions.",
+				"Suggest improvements and new features.",
+			],
+			technicalHighlights: [
+				"TanStack Start.",
+				"Storyblok integration.",
+				"Lighthouse optimisation for desktop and mobile.",
+			],
+			challenges: [],
+			result:
+				"The result was a new frontend architecture built with TanStack Start, a Lighthouse report in which the solution scored above 90 in every category, and a documented comparison between the existing and the new solution.",
+			learnings: [
+				"Working with TanStack Start.",
+				"Evaluating frontend solutions with Lighthouse.",
+				"Retaining an existing Storyblok integration during architectural work.",
+			],
+		},
+		logivance: {
+			title: "Logivance",
+			summary:
+				"A logistics platform for climate-controlled deliveries with role-based interfaces for administrators, customers and drivers.",
+			category: "School project",
+			period: "2025",
+			role: "Frontend developer",
+			team: "Cross-functional team with a UX designer and backend, frontend and embedded developers.",
+			image: {
+				src: "/projects/logivance.png",
+				alt: "Logivance login page.",
+			},
+			technologies: [
+				"React",
+				"TypeScript",
+				"React Router",
+				"Tailwind CSS",
+				"Vite",
+				"Vitest",
+				"React Testing Library",
+				"GitHub Actions",
+				"Azure Static Web Apps",
+			],
+			links: {
+				github: "https://github.com/orgs/Chas-Advance-Grupp-4/repositories",
+			},
+			problem:
+				"Transporting temperature- and humidity-sensitive goods requires delivery status, delivery information and current climate data to be tracked throughout the logistics chain. Different user groups also need access to different parts of the information.",
+			solution:
+				"We developed three role-based frontend applications for administrators, customers and drivers. The platform makes it possible to track deliveries, view current temperature and humidity, review delivery history, scan QR codes and update package status throughout the logistics flow.",
+			responsibilities: [
+				"Developed functionality in the React applications for administrators, customers and drivers.",
+				"Worked with authentication, JWT handling, protected routes and role-based user flows.",
+				"Built views for package overviews, deliveries, delivery details, history and assigned transports.",
+				"Integrated the frontend applications with backend APIs for users, deliveries, climate data and status updates.",
+				"Implemented QR code and QR scanning functionality in customer and driver flows.",
+				"Worked with automated testing using Vitest and React Testing Library.",
+				"Contributed to GitHub Actions workflows for linting, type-checking, testing and builds.",
+				"Contributed to a shared Azure Static Web Apps workflow for deploying all frontend applications.",
+				"Collaborated with backend, embedded and UX specialists to connect the user interface with the rest of the system.",
+			],
+			technicalHighlights: [
+				"Three separate React and TypeScript applications for administrators, customers and drivers.",
+				"Role-based routing and protected routes with React Router.",
+				"Responsive interfaces built with Tailwind CSS.",
+				"Display of current temperature and humidity with checks against permitted threshold values.",
+				"Delivery statuses including created, assigned, in progress, delivered and cancelled.",
+				"QR codes and QR scanning for identifying shipments and updating their status.",
+				"Automated component and user tests with Vitest and React Testing Library.",
+				"A shared GitHub Actions workflow with a matrix strategy for all frontend applications.",
+				"Automated deployment to staging, production and preview environments in Azure Static Web Apps.",
+				"Automatic closure of preview environments when a pull request was closed.",
+			],
+			challenges: [
+				{
+					title: "A shared delivery process for three frontend applications",
+					description:
+						"The admin, customer and driver interfaces needed to be built and deployed separately. Several independent workflow files would have created duplicated code and increased the risk of handling the applications differently.",
+					solution:
+						"We created a shared GitHub Actions workflow with a matrix strategy where each frontend was built and deployed in an isolated run. The workflow supported staging, production and pull request-based previews, and automatically closed preview environments when a pull request was closed.",
+				},
+				{
+					title: "Different user roles and workflows",
+					description:
+						"Administrators, customers and drivers needed different views, permissions and functionality within the same logistics chain.",
+					solution:
+						"We used shared authentication logic and role-based protected routes, while giving each frontend its own views and user flows tailored to its role.",
+				},
+			],
+			result:
+				"The result was three role-based frontend applications supporting different parts of the logistics flow, from package overviews and delivery history to assigned transports, QR scanning and status updates. The shared CI/CD structure made deployment more consistent and easier to maintain.",
+			learnings: [
+				"Structuring and further developing several interconnected React applications.",
+				"Building role-based user flows with authentication and protected routes.",
+				"Integrating frontend applications with APIs for delivery, status and climate data.",
+				"Implementing QR-based flows for identifying shipments.",
+				"Writing tests with Vitest and React Testing Library.",
+				"Automating builds and deployment with GitHub Actions and Azure Static Web Apps.",
+				"Collaborating in a cross-functional system involving frontend, backend, embedded and UX.",
+			],
+		},
+		dara: {
+			title: "Dara Music App",
+			summary:
+				"A modern music application built with the Spotify API, focused on real-time search, favourites management and user-friendly navigation.",
+			category: "School project",
+			period: "2025",
+			role: "Frontend developer",
+			image: {
+				src: "/projects/dara.png",
+				alt: "Dara Music App",
+			},
+			technologies: [
+				"React",
+				"TypeScript",
+				"React Router",
+				"Zustand",
+				"Tailwind CSS",
+				"Spotify API",
+			],
+			links: {
+				github: "https://github.com/alicegmn/dara",
+			},
+			problem:
+				"Users need to discover music, search for artists and tracks, and save favourites in a cohesive and easy-to-use application.",
+			solution:
+				"We built a responsive music application with Spotify OAuth, debounced real-time search, top artist and track displays, and favourites persisted in localStorage.",
+			responsibilities: [
+				"Developed the user interface with React and TypeScript.",
+				"Implemented routing for the home, favourites, artist and sign-in views.",
+				"Built debounced real-time search for artists and tracks.",
+				"Implemented Spotify OAuth 2.0 authentication.",
+				"Built functionality for adding and removing favourite tracks.",
+				"Collaborated on a modular and scalable application structure.",
+			],
+			technicalHighlights: [
+				"React and TypeScript with a component-based architecture.",
+				"Spotify OAuth 2.0 and the Spotify Web API.",
+				"React Router for navigation between application views.",
+				"Zustand for authentication state and global favourites management.",
+				"Tailwind CSS for a responsive and accessible interface.",
+				"localStorage for persisting favourite tracks between sessions.",
+			],
+			challenges: [],
+			result:
+				"The result was a working music application where users can sign in with Spotify, search for music, explore artists and tracks, and manage their favourites.",
+			learnings: [
+				"Integrating an external API with OAuth authentication.",
+				"Managing global state with Zustand.",
+				"Building responsive and accessible React interfaces.",
+				"Structuring a larger frontend application with reusable components.",
 			],
 		},
 	},

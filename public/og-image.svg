@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+	<rect width="1200" height="630" fill="#fff" />
+	<rect x="48" y="48" width="1104" height="534" rx="24" fill="#4b0a23" />
+	<circle cx="1060" cy="130" r="42" fill="#fe4629" />
+	<text x="100" y="150" fill="#fe4629" font-family="Arial, sans-serif" font-size="28" font-weight="700" letter-spacing="5">/ PORTFOLIO</text>
+	<text x="100" y="310" fill="#fff" font-family="Arial, sans-serif" font-size="92" font-weight="700">Alice Eriksson</text>
+	<text x="100" y="390" fill="#fff" font-family="Arial, sans-serif" font-size="38">Full-stack developer in Malmö</text>
+	<text x="100" y="500" fill="#fff" font-family="Arial, sans-serif" font-size="26" opacity="0.76">Development · communication · digital projects</text>
+</svg>
