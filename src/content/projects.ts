@@ -165,7 +165,7 @@ export const projects = {
 				"Azure Static Web Apps",
 			],
 			links: {
-				github: "https://github.com/Chas-Advance-Grupp-4/frontend",
+				github: "https://github.com/orgs/Chas-Advance-Grupp-4/repositories",
 			},
 			problem:
 				"Transporter av temperatur- och fuktkänsliga varor kräver att leveransstatus, leveransinformation och aktuella klimatvärden kan följas genom logistikkedjan. Olika användargrupper behöver samtidigt tillgång till olika delar av informationen.",
