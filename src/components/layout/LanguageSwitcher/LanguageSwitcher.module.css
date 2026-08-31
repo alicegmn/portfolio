@@ -1,14 +1,13 @@
 .languageSwitcher {
 	display: flex;
 	align-items: center;
-	gap: var(--space-1);
+	gap: 0.25rem;
 	font-size: var(--font-size-sm);
 }
 
 .languageSwitcher a {
+	position: relative;
 	display: inline-flex;
-	min-width: 2.75rem;
-	min-height: 2.75rem;
 	align-items: center;
 	justify-content: center;
 	color: inherit;
@@ -16,8 +15,23 @@
 	opacity: 0.7;
 }
 
+.languageSwitcher a::before {
+	position: absolute;
+	inset: -0.5rem -0.25rem;
+	content: "";
+}
+
 .languageSwitcher a:hover,
-.languageSwitcher a:focus-visible,
+.languageSwitcher a:focus-visible {
+	opacity: 1;
+	color: var(--color-primary);
+}
+
 .languageSwitcher .active {
 	opacity: 1;
+	color: var(--color-surface);
+	font-weight: 600;
+	text-decoration: underline;
+	text-decoration-color: var(--color-primary);
+	text-underline-offset: calc(0.2em + 1px);
 }

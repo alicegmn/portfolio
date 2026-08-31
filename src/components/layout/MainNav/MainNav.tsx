@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import styles from "./MainNav.module.css";
+import cn from "clsx";
 
 type NavItem = {
 	readonly label: string;
@@ -11,10 +12,11 @@ type NavItem = {
 };
 
 type MainNavProps = Readonly<{
+	className?: string;
 	items: readonly NavItem[];
 }>;
 
-export function MainNav({ items }: MainNavProps) {
+export function MainNav({ className, items }: MainNavProps) {
 	const pathname = usePathname();
 	const [isOpen, setIsOpen] = useState(false);
 	const menuButtonRef = useRef<HTMLButtonElement>(null);
@@ -90,13 +92,13 @@ export function MainNav({ items }: MainNavProps) {
 	}, [isOpen]);
 
 	return (
-		<div className={styles.mainNavContainer}>
+		<div className={cn(styles.mainNavContainer, className)}>
 			<button
 				type="button"
 				ref={menuButtonRef}
-				className={`${styles.menuButton} ${
-					isOpen ? styles.menuButtonOpen : ""
-				}`}
+				className={cn(styles.menuButton, {
+					[styles.menuButtonOpen]: isOpen,
+				})}
 				aria-label={isOpen ? closeLabel : openLabel}
 				aria-expanded={isOpen}
 				aria-controls="main-navigation"
@@ -112,7 +114,9 @@ export function MainNav({ items }: MainNavProps) {
 			<nav
 				ref={navRef}
 				id="main-navigation"
-				className={`${styles.mainNav} ${isOpen ? styles.open : ""}`}
+				className={cn(styles.mainNav, {
+					[styles.open]: isOpen,
+				})}
 				aria-label={isSwedish ? "Huvudnavigation" : "Main navigation"}
 			>
 				{items.map((item) => {
