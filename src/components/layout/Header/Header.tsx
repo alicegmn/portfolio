@@ -18,12 +18,18 @@ export function Header({ name, currentLocale, homeHref }: HeaderProps) {
 					{name}
 				</Link>
 
-				<div className={styles.navigation}>
-					<MainNav items={content[currentLocale].nav} />
-				</div>
+				<div className={styles.menus}>
+					<MainNav
+						className={styles.navigation}
+						items={content[currentLocale].nav}
+					/>
 
-				<div className={styles.language}>
-					<LanguageSwitcher currentLocale={currentLocale} />
+					<span className={styles.separator} aria-hidden="true" />
+
+					<LanguageSwitcher
+						className={styles.language}
+						currentLocale={currentLocale}
+					/>
 				</div>
 			</div>
 		</header>
