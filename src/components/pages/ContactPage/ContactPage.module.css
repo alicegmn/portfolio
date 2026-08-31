@@ -31,7 +31,7 @@
 .link:hover,
 .link:focus-visible {
 	padding-left: 0.75rem;
-	color: var(--color-primary-text);
+	color: var(--color-primary);
 	text-decoration: none;
 }
 
@@ -76,7 +76,6 @@
 		gap: var(--space-7);
 		padding-block: var(--space-5) var(--space-7);
 	}
-
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -28,7 +28,7 @@
 	font-size: var(--font-size-xs);
 	font-weight: 700;
 	letter-spacing: 0.12em;
-	color: var(--color-primary-text);
+	color: var(--color-primary);
 }
 
 .page a {
@@ -41,5 +41,5 @@
 
 .page a:hover,
 .page a:focus-visible {
-	color: var(--color-primary-text);
+	color: var(--color-primary);
 }

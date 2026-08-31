@@ -27,7 +27,7 @@
 	line-height: 1.2;
 	letter-spacing: 0.12em;
 	text-transform: uppercase;
-	color: var(--color-primary-text);
+	color: var(--color-primary);
 }
 
 .title {
@@ -86,7 +86,7 @@
 .secondaryLink:hover,
 .secondaryLink:focus-visible {
 	color: #ffffff;
-	background: var(--color-primary-button);
+	background: var(--color-primary);
 	text-decoration: none;
 	transform: translateY(-0.08rem);
 }
@@ -136,7 +136,7 @@
 
 .facts h2,
 .section h3 {
-	color: var(--color-primary-text);
+	color: var(--color-primary);
 }
 
 .facts p {
