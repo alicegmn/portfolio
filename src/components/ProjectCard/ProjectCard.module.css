@@ -5,7 +5,9 @@
 	border-radius: var(--radius-md);
 	background: var(--color-surface);
 	box-shadow: var(--shadow-card);
-	transition: transform var(--transition-fast), box-shadow var(--transition-fast),
+	transition:
+		transform var(--transition-fast),
+		box-shadow var(--transition-fast),
 		border-color var(--transition-fast);
 }
 
@@ -70,7 +72,7 @@
 	line-height: 1.2;
 	letter-spacing: 0.12em;
 	text-transform: uppercase;
-	color: var(--color-primary-text);
+	color: var(--color-primary);
 }
 
 .content h2 {
@@ -135,7 +137,7 @@
 	}
 
 	.content {
-	padding: var(--space-4);
+		padding: var(--space-4);
 	}
 
 	.content > span {

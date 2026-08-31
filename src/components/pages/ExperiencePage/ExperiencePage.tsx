@@ -19,7 +19,7 @@ export function ExperiencePage({ locale }: ExperiencePageProps) {
 			<section className={styles.section}>
 				<div className={styles.sectionHeader}>
 					<h2>{experience.experience.heading}</h2>
-					<span>01</span>
+					<span aria-hidden="true">01</span>
 				</div>
 				<div className={styles.experienceList}>
 				{experience.experience.items.map((item) => (
@@ -40,7 +40,7 @@ export function ExperiencePage({ locale }: ExperiencePageProps) {
 			<section className={styles.section}>
 				<div className={styles.sectionHeader}>
 					<h2>{experience.education.heading}</h2>
-					<span>02</span>
+					<span aria-hidden="true">02</span>
 				</div>
 				<div className={styles.cardGrid}>
 				{experience.education.items.map((item) => (
@@ -56,7 +56,7 @@ export function ExperiencePage({ locale }: ExperiencePageProps) {
 			<section className={styles.section}>
 				<div className={styles.sectionHeader}>
 					<h2>{experience.courses.heading}</h2>
-					<span>03</span>
+					<span aria-hidden="true">03</span>
 				</div>
 				<div className={styles.cardGrid}>
 				{experience.courses.items.map((item) => (
@@ -72,7 +72,7 @@ export function ExperiencePage({ locale }: ExperiencePageProps) {
 			<section className={styles.section}>
 				<div className={styles.sectionHeader}>
 					<h2>{experience.technologies.heading}</h2>
-					<span>04</span>
+					<span aria-hidden="true">04</span>
 				</div>
 				<p className={styles.technologyText}>{experience.technologies.text}</p>
 			</section>
@@ -80,7 +80,7 @@ export function ExperiencePage({ locale }: ExperiencePageProps) {
 			<section className={styles.section}>
 				<div className={styles.sectionHeader}>
 					<h2>{experience.waysOfWorking.heading}</h2>
-					<span>05</span>
+					<span aria-hidden="true">05</span>
 				</div>
 				<p className={styles.technologyText}>{experience.waysOfWorking.text}</p>
 			</section>

@@ -46,7 +46,7 @@
 
 .sectionLink:hover,
 .sectionLink:focus-visible {
-	color: var(--color-primary-text);
+	color: var(--color-primary);
 }
 
 .photo {

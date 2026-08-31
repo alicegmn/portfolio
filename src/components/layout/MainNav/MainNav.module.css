@@ -10,7 +10,7 @@
 	align-items: center;
 	justify-content: center;
 	flex-wrap: wrap;
-	gap: var(--space-4);
+	gap: clamp(var(--space-2), 2.5vw, var(--space-5));
 
 	margin: 0;
 	padding: 0;
@@ -22,19 +22,30 @@
 	color: inherit;
 	line-height: 1;
 	text-decoration: none;
-	opacity: 0.7;
+	opacity: 0.72;
 
 	transition:
 		opacity 160ms ease,
+		color 160ms ease,
 		transform 160ms ease;
 }
 
 .mainNav a:hover,
-.mainNav a:focus-visible,
+.mainNav a:focus-visible {
+	opacity: 1;
+	color: var(--color-primary);
+	text-decoration: underline;
+	text-decoration-color: var(--color-primary);
+	text-underline-offset: calc(0.2em + 1px);
+}
+
 .mainNav a.active {
 	opacity: 1;
+	color: var(--color-surface);
+	font-weight: 600;
 	text-decoration: underline;
-	text-underline-offset: 0.2em;
+	text-decoration-color: var(--color-primary);
+	text-underline-offset: calc(0.2em + 1px);
 }
 
 .mainNav a:focus-visible {
@@ -56,8 +67,8 @@
 		position: relative;
 		z-index: 10001;
 		display: grid;
-		width: 3rem;
-		height: 3rem;
+		width: 1.25rem;
+		height: 1rem;
 		padding: 0;
 		place-items: center;
 		color: inherit;
@@ -65,6 +76,12 @@
 		border: 0;
 		border-radius: 0;
 		cursor: pointer;
+	}
+
+	.menuButton::before {
+		position: absolute;
+		inset: -0.5rem;
+		content: "";
 	}
 
 	.menuButton:hover {
@@ -80,7 +97,7 @@
 		position: relative;
 		display: block;
 		width: 1.25rem;
-		height: 0.9rem;
+		height: 1rem;
 	}
 
 	.menuIcon span {
@@ -127,7 +144,7 @@
 	}
 
 	.menuButtonOpen {
-		color: var(--color-primary-on-dark);
+		color: var(--color-primary);
 		background: transparent;
 	}
 
@@ -186,12 +203,16 @@
 	}
 
 	.mainNav a:hover,
-	.mainNav a:focus-visible,
-	.mainNav a.active {
+	.mainNav a:focus-visible {
 		opacity: 1;
-		color: var(--color-primary-on-dark);
+		color: var(--color-primary);
 		transform: translateX(0.4rem);
 		text-decoration: none;
+	}
+
+	.mainNav a.active {
+		color: var(--color-surface);
+		text-decoration-color: var(--color-primary);
 	}
 }
 
