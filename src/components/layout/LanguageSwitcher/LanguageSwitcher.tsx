@@ -4,19 +4,24 @@ import Link from "next/link";
 import { getLocalizedPath, type Locale } from "@/content/content";
 import styles from "./LanguageSwitcher.module.css";
 import { usePathname } from "next/navigation";
+import cn from "clsx";
 
 type LanguageSwitcherProps = {
+	className?: string;
 	currentLocale: Locale;
 };
 
-export function LanguageSwitcher({ currentLocale }: LanguageSwitcherProps) {
+export function LanguageSwitcher({
+	className,
+	currentLocale,
+}: LanguageSwitcherProps) {
 	const pathname = usePathname();
 	const svPath = getLocalizedPath(pathname, currentLocale, "sv");
 	const enPath = getLocalizedPath(pathname, currentLocale, "en");
 
 	return (
 		<nav
-			className={styles.languageSwitcher}
+			className={cn(styles.languageSwitcher, className)}
 			aria-label={currentLocale === "sv" ? "Språk" : "Language"}
 		>
 			<Link
@@ -27,7 +32,7 @@ export function LanguageSwitcher({ currentLocale }: LanguageSwitcherProps) {
 				sv
 			</Link>
 
-			<span>/</span>
+			<span aria-hidden="true">/</span>
 
 			<Link
 				href={enPath}
