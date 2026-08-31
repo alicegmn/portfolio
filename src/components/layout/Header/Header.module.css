@@ -6,7 +6,7 @@
 	margin-inline: calc(var(--site-padding) * -1);
 	background-color: var(--color-secondary);
 	color: var(--color-surface);
-	height: 6rem;
+	height: clamp(4.75rem, 7vw, 6rem);
 }
 
 .content {
