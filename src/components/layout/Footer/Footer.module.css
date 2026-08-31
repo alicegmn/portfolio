@@ -35,7 +35,7 @@
 
 .socialLink:hover,
 .socialLink:focus-visible {
-	color: var(--color-primary-text);
+	color: var(--color-primary);
 }
 
 @media (max-width: 767px) {
