@@ -143,9 +143,9 @@ export const content = {
 					linkText: "Se hela erfarenheten",
 				},
 				contact: {
-					heading: "Låt oss göra något tillsammans!",
-					text: "Jag söker jobb eller uppdrag inom utveckling och IT i Malmö med omnejd. Jag prioriterar utvecklar- och IT-roller, men är öppen för relevanta roller där min bakgrund kommer till sin rätt. Tillgänglig omgående.",
-					linkText: "Ta kontakt",
+					heading: "Söker nya möjligheter!",
+					text: "Jag söker jobb eller uppdrag i Malmö med omnejd inom utveckling, IT och digital kommunikation. Jag trivs bäst där teknik, kommunikation och användarbehov möts och är öppen för både specialist- och bredare tekniknära roller.",
+					linkText: "Hör av dig",
 				},
 			},
 		},
@@ -163,7 +163,7 @@ export const content = {
 		contact: {
 			heading: "Hör gärna av dig",
 			description:
-				"Jag söker jobb eller uppdrag inom utveckling och IT i Malmö med omnejd. Jag prioriterar roller som utvecklare eller inom IT, men är också öppen för andra roller där min bakgrund inom kommunikation, support och digitala projekt är relevant. Jag är tillgänglig omgående.",
+				"Jag söker jobb eller uppdrag i Malmö med omnejd inom utveckling, IT och digital kommunikation. Jag är särskilt intresserad av roller där teknik, kommunikation och användarbehov möts, exempelvis inom systemutveckling, IT- och systemsupport, digital kommunikation, webb, UX och digitalisering. Jag är också öppen för andra roller där min bakgrund inom kommunikation, support och digitala projekt är relevant. Jag är tillgänglig omgående.",
 		},
 
 		experience: experience.sv,
@@ -237,8 +237,8 @@ export const content = {
 					linkText: "View full experience",
 				},
 				contact: {
-					heading: "Let’s create something together!",
-					text: "I’m looking for a job or project opportunity in development or IT in Malmö and the surrounding area. I prioritise developer and IT roles, while staying open to relevant opportunities. Available immediately.",
+					heading: "Looking for new opportunities!",
+					text: "I’m looking for jobs or project opportunities in Malmö and the surrounding area within development, IT and digital communication. I thrive in roles where technology, communication and user needs come together, and I’m open to both specialist and broader technology-focused roles.",
 					linkText: "Get in touch",
 				},
 			},
@@ -257,7 +257,7 @@ export const content = {
 		contact: {
 			heading: "Get in touch",
 			description:
-				"I’m looking for a job or project opportunity in development or IT in Malmö and the surrounding area. I prioritise developer and IT roles, but I’m also open to other opportunities where my background in communication, support, and digital projects is relevant. I’m available immediately.",
+				"I’m looking for a job or project opportunity in Malmö and the surrounding area within development, IT or digital communication. I’m particularly interested in roles where technology, communication and user needs come together, such as software development, IT and system support, digital communication, web, UX and digitalisation. I’m also open to other opportunities where my background in communication, support and digital projects is relevant. I’m available immediately.",
 		},
 
 		experience: experience.en,
