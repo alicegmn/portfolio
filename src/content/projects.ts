@@ -6,14 +6,15 @@ export const projectSlugs = [
 	"logivance",
 	"dara",
 	"divido",
+	"future-days",
 ] as const;
 
 export type ProjectSlug = (typeof projectSlugs)[number];
 
 export const selectedProjectSlugs = [
 	"divido",
+	"future-days",
 	"dynamic-dog",
-	"pax",
 ] as const satisfies readonly ProjectSlug[] & { length: 1 | 2 | 3 };
 
 export type Project = {
@@ -328,6 +329,55 @@ export const projects = {
 				"Arbeta praktiskt med PostgreSQL-relationer, RLS, databasfunktioner och atomiska operationer.",
 			],
 		},
+		"future-days": {
+			title: "Future Days",
+			summary:
+				"En webbplats för Future Days, en internationell festival med fokus på kultur, design och framtidsfrågor.",
+			category: "Future Days",
+			period: "2026",
+			role: "Frontendutvecklare, praktikant",
+			team: "Byggde webbplatsen tillsammans med en annan praktikant. Arbetet handleddes och granskades av vår handledare på Dynamic Dog.",
+			image: {
+				src: "/images/projects/future-days.png",
+				alt: "Future Days webbplats",
+			},
+			technologies: [
+				"React",
+				"Next.js",
+				"TypeScript",
+				"CSS Modules",
+				"Storyblok",
+				"Brevo",
+			],
+			links: {
+				live: "https://www.futuredays.io/",
+			},
+			problem:
+				"Future Days behövde få sin existerande design omsatt till en fungerande och innehållsdriven webbplats. Webbplatsen behövde samtidigt kunna hantera redaktionellt innehåll och formulärintegrationer.",
+			solution:
+				"Jag byggde återanvändbara UI-komponenter i React och Next.js med TypeScript och CSS Modules. Jag integrerade Storyblok för innehållshantering och kopplade formulär mot Brevo.",
+			responsibilities: [
+				"Byggde UI-komponenter i React och Next.js utifrån Future Days existerande design.",
+				"Utvecklade gränssnittet med TypeScript och CSS Modules.",
+				"Integrerade Storyblok för redaktionellt innehåll.",
+				"Implementerade formulärintegration mot Brevo.",
+			],
+			technicalHighlights: [
+				"Återanvändbara UI-komponenter byggda med React och Next.js.",
+				"TypeScript för typad frontendutveckling.",
+				"CSS Modules för komponentbaserad styling.",
+				"Storyblok-integration för innehållshantering.",
+				"Brevo-integration för formulärhantering.",
+			],
+			challenges: [],
+			result:
+				"Resultatet blev en fungerande Future Days-webbplats som omsätter den existerande designen i återanvändbara React- och Next.js-komponenter, med Storyblok-integration och formulär kopplade till Brevo.",
+			learnings: [
+				"Att omsätta en färdig visuell design till återanvändbara frontendkomponenter.",
+				"Att arbeta med innehållsdrivna webbplatser och Storyblok.",
+				"Att integrera formulär med externa tjänster som Brevo.",
+			],
+		},
 	},
 
 	en: {
@@ -608,6 +658,55 @@ export const projects = {
 				"Working more production-oriented with mobile development and backend architecture.",
 				"Separating authentication from application data and avoiding reliance on the client for security or critical business logic.",
 				"Working practically with PostgreSQL relationships, RLS, database functions and atomic operations.",
+			],
+		},
+		"future-days": {
+			title: "Future Days",
+			summary:
+				"A website for Future Days, an international festival focused on culture, design and questions about the future.",
+			category: "Future Days",
+			period: "2026",
+			role: "Frontend Developer Intern",
+			team: "Built the website together with another intern. The work was supervised and reviewed by our supervisor at Dynamic Dog.",
+			image: {
+				src: "/images/projects/future-days.png",
+				alt: "Future Days website",
+			},
+			technologies: [
+				"React",
+				"Next.js",
+				"TypeScript",
+				"CSS Modules",
+				"Storyblok",
+				"Brevo",
+			],
+			links: {
+				live: "https://www.futuredays.io/",
+			},
+			problem:
+				"Future Days needed its existing design to be turned into a working, content-driven website. The site also needed to support editorial content and form integrations.",
+			solution:
+				"I built reusable UI components in React and Next.js with TypeScript and CSS Modules. I integrated Storyblok for content management and connected forms to Brevo.",
+			responsibilities: [
+				"Built UI components in React and Next.js based on Future Days' existing design.",
+				"Developed the interface with TypeScript and CSS Modules.",
+				"Integrated Storyblok for editorial content.",
+				"Implemented a form integration with Brevo.",
+			],
+			technicalHighlights: [
+				"Reusable UI components built with React and Next.js.",
+				"TypeScript for typed frontend development.",
+				"CSS Modules for component-based styling.",
+				"Storyblok integration for content management.",
+				"Brevo integration for form handling.",
+			],
+			challenges: [],
+			result:
+				"The result was a working Future Days website that translates the existing design into reusable React and Next.js components, with Storyblok integration and forms connected to Brevo.",
+			learnings: [
+				"Turning an established visual design into reusable frontend components.",
+				"Working with content-driven websites and Storyblok.",
+				"Integrating forms with external services such as Brevo.",
 			],
 		},
 	},
