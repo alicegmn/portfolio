@@ -333,7 +333,7 @@ export const projects = {
 			title: "Future Days",
 			summary:
 				"En webbplats för Future Days, en internationell festival med fokus på kultur, design och framtidsfrågor.",
-			category: "Future Days",
+			category: "Projekt under praktik",
 			period: "2026",
 			role: "Frontendutvecklare, praktikant",
 			team: "Byggde webbplatsen tillsammans med en annan praktikant. Arbetet handleddes och granskades av vår handledare på Dynamic Dog.",
@@ -664,7 +664,7 @@ export const projects = {
 			title: "Future Days",
 			summary:
 				"A website for Future Days, an international festival focused on culture, design and questions about the future.",
-			category: "Future Days",
+			category: "Project during internship",
 			period: "2026",
 			role: "Frontend Developer Intern",
 			team: "Built the website together with another intern. The work was supervised and reviewed by our supervisor at Dynamic Dog.",
