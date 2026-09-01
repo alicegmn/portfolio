@@ -18,7 +18,7 @@ export const about = {
 			},
 			{
 				title: "Vad jag söker",
-				text: "Jag söker främst roller inom utveckling och IT, men är även öppen för tekniknära roller där min bakgrund inom kommunikation, support och digitala projekt är relevant.",
+				text: "Jag söker främst roller inom utveckling, IT och digital kommunikation, men är också öppen för andra tekniknära roller där min bakgrund inom kommunikation, support och digitala projekt är relevant.",
 				linkText: "Hör av dig →",
 				href: "/sv/kontakt",
 			},
@@ -43,7 +43,7 @@ export const about = {
 			},
 			{
 				title: "What I’m looking for",
-				text: "I’m primarily looking for roles in development and IT, but I’m also open to technology-focused roles where my background in communication, support, and digital projects is relevant.",
+				text: "I’m primarily looking for roles in development, IT and digital communication, but I’m also open to other technology-focused roles where my background in communication, support, and digital projects is relevant.",
 				linkText: "Get in touch →",
 				href: "/en/contact",
 			},

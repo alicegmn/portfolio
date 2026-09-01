@@ -5,14 +5,16 @@ export const projectSlugs = [
 	"dynamic-dog",
 	"logivance",
 	"dara",
+	"divido",
+	"future-days",
 ] as const;
 
 export type ProjectSlug = (typeof projectSlugs)[number];
 
 export const selectedProjectSlugs = [
+	"divido",
+	"future-days",
 	"dynamic-dog",
-	"logivance",
-	"pax",
 ] as const satisfies readonly ProjectSlug[] & { length: 1 | 2 | 3 };
 
 export type Project = {
@@ -107,11 +109,11 @@ export const projects = {
 			title: "Optimering av dynamicdog.se",
 			summary:
 				"Migrering från Next.js och styled components till TanStack Start och CSS modules samt prestandaoptimering med Lighthouse.",
-			category: "Frontendarkitektur",
+			category: "Examensarbete",
 			period: "2026",
 			role: "Frontendutveckling",
 			image: {
-				src: "/projects/dynamic-dog.png",
+				src: "/images/projects/dynamic-dog.png",
 				alt: "Skärmbild av Dynamic Dogs webbplats",
 			},
 			technologies: ["TanStack Start", "Storyblok", "TypeScript", "Lighthouse"],
@@ -150,7 +152,7 @@ export const projects = {
 			role: "Frontendutvecklare",
 			team: "Tvärfunktionellt team med UX-designer samt backend-, frontend- och embeddedutvecklare.",
 			image: {
-				src: "/projects/logivance.png",
+				src: "/images/projects/logivance.png",
 				alt: "Skärmbild av Logivances inloggningssida",
 			},
 			technologies: [
@@ -230,7 +232,7 @@ export const projects = {
 			period: "2025",
 			role: "Frontendutvecklare",
 			image: {
-				src: "/projects/dara.png",
+				src: "/images/projects/dara.png",
 				alt: "Dara Music App",
 			},
 			technologies: [
@@ -272,6 +274,108 @@ export const projects = {
 				"Att hantera global state med Zustand.",
 				"Att bygga responsiva och tillgängliga React-gränssnitt.",
 				"Att strukturera en större frontendapplikation med återanvändbara komponenter.",
+			],
+		},
+		divido: {
+			title: "Divido",
+			summary:
+				"En mobilapp för att dela gemensamma utgifter och hålla reda på vem som är skyldig vem.",
+			category: "Mobilapplikation",
+			period: "Pågående",
+			role: "Fullstackutvecklare & produktutvecklare",
+			image: {
+				src: "/images/projects/divido.png",
+				alt: "Översikt av Divido-appen för delade utgifter",
+			},
+			technologies: [
+				"React Native",
+				"Expo",
+				"Expo Router",
+				"TypeScript",
+				"Supabase",
+				"PostgreSQL",
+				"Supabase Auth",
+				"Row Level Security",
+				"React Hook Form",
+				"Zod",
+			],
+			links: {
+				github: "https://github.com/alicegmn/divido",
+			},
+			problem:
+				"Att dela kostnader i en grupp blir snabbt svårt att hålla reda på när olika personer betalar olika utgifter. Utmaningen är inte bara att registrera kostnader, utan att modellera deltagare, betalningar och fördelningar på ett sätt som gör att saldot alltid kan räknas fram korrekt.",
+			solution:
+				"Jag utvecklar Divido som en mobilapp där användare kan skapa grupper, hantera medlemmar och registrera gemensamma utgifter. React Native och Expo används för klienten medan Supabase tillhandahåller autentisering, API och PostgreSQL-databas. Behörighet hanteras med Row Level Security så att användare endast kan komma åt grupper och data de har rätt till.",
+			responsibilities: [
+				"Ansvarar för produktidé och användarflöden.",
+				"Utvecklar frontend och datamodell.",
+				"Implementerar autentisering och databasarkitektur.",
+				"Arbetar med API-integration och behörighetsregler.",
+				"Implementerar formulärvalidering och versionshanterade databasmigrationer.",
+			],
+			technicalHighlights: [
+				"Supabase Auth används tillsammans med en separat profiles-modell för applikationsdata.",
+				"PostgreSQL Row Level Security begränsar åtkomst till grupper och medlemskap.",
+				"En PostgreSQL-funktion skapar gruppen och det första medlemskapet atomärt i samma transaktion.",
+				"React Hook Form och Zod används för formulär och validering.",
+				"Expo Router används för navigationen.",
+			],
+			challenges: [],
+			result:
+				"Projektet har hittills resulterat i en fungerande mobilgrund med registrering, inloggning, användarprofiler, gruppskapande och visning av gruppmedlemmar kopplat till en produktionsnära backend. Nästa steg är medlemsinbjudningar och den centrala modellen för utgifter, fördelningar och saldon.",
+			learnings: [
+				"Arbeta mer produktionsnära med mobilutveckling och backendarkitektur.",
+				"Skilja autentisering från applikationsdata och inte förlita sig på klienten för säkerhet eller kritisk affärslogik.",
+				"Arbeta praktiskt med PostgreSQL-relationer, RLS, databasfunktioner och atomiska operationer.",
+			],
+		},
+		"future-days": {
+			title: "Future Days",
+			summary:
+				"En webbplats för Future Days, en internationell festival med fokus på kultur, design och framtidsfrågor.",
+			category: "Projekt under praktik",
+			period: "2026",
+			role: "Frontendutvecklare, praktikant",
+			team: "Byggde webbplatsen tillsammans med en annan praktikant. Arbetet handleddes och granskades av vår handledare på Dynamic Dog.",
+			image: {
+				src: "/images/projects/future-days.png",
+				alt: "Future Days webbplats",
+			},
+			technologies: [
+				"React",
+				"Next.js",
+				"TypeScript",
+				"CSS Modules",
+				"Storyblok",
+				"Brevo",
+			],
+			links: {
+				live: "https://www.futuredays.io/",
+			},
+			problem:
+				"Future Days behövde få sin existerande design omsatt till en fungerande och innehållsdriven webbplats. Webbplatsen behövde samtidigt kunna hantera redaktionellt innehåll och formulärintegrationer.",
+			solution:
+				"Jag byggde återanvändbara UI-komponenter i React och Next.js med TypeScript och CSS Modules. Jag integrerade Storyblok för innehållshantering och kopplade formulär mot Brevo.",
+			responsibilities: [
+				"Byggde UI-komponenter i React och Next.js utifrån Future Days existerande design.",
+				"Utvecklade gränssnittet med TypeScript och CSS Modules.",
+				"Integrerade Storyblok för redaktionellt innehåll.",
+				"Implementerade formulärintegration mot Brevo.",
+			],
+			technicalHighlights: [
+				"Återanvändbara UI-komponenter byggda med React och Next.js.",
+				"TypeScript för typad frontendutveckling.",
+				"CSS Modules för komponentbaserad styling.",
+				"Storyblok-integration för innehållshantering.",
+				"Brevo-integration för formulärhantering.",
+			],
+			challenges: [],
+			result:
+				"Resultatet blev en fungerande Future Days-webbplats som omsätter den existerande designen i återanvändbara React- och Next.js-komponenter, med Storyblok-integration och formulär kopplade till Brevo.",
+			learnings: [
+				"Att omsätta en färdig visuell design till återanvändbara frontendkomponenter.",
+				"Att arbeta med innehållsdrivna webbplatser och Storyblok.",
+				"Att integrera formulär med externa tjänster som Brevo.",
 			],
 		},
 	},
@@ -340,7 +444,7 @@ export const projects = {
 			period: "2026",
 			role: "Frontend development",
 			image: {
-				src: "/projects/dynamic-dog.png",
+				src: "/images/projects/dynamic-dog.png",
 				alt: "Dynamic Dog website screenshot.",
 			},
 			technologies: ["TanStack Start", "Storyblok", "TypeScript", "Lighthouse"],
@@ -379,7 +483,7 @@ export const projects = {
 			role: "Frontend developer",
 			team: "Cross-functional team with a UX designer and backend, frontend and embedded developers.",
 			image: {
-				src: "/projects/logivance.png",
+				src: "/images/projects/logivance.png",
 				alt: "Logivance login page.",
 			},
 			technologies: [
@@ -459,7 +563,7 @@ export const projects = {
 			period: "2025",
 			role: "Frontend developer",
 			image: {
-				src: "/projects/dara.png",
+				src: "/images/projects/dara.png",
 				alt: "Dara Music App",
 			},
 			technologies: [
@@ -501,6 +605,108 @@ export const projects = {
 				"Managing global state with Zustand.",
 				"Building responsive and accessible React interfaces.",
 				"Structuring a larger frontend application with reusable components.",
+			],
+		},
+		divido: {
+			title: "Divido",
+			summary:
+				"A mobile app for splitting shared expenses and keeping track of who owes whom.",
+			category: "Mobile application",
+			period: "Ongoing",
+			role: "Fullstack Developer & Product Developer",
+			image: {
+				src: "/images/projects/divido.png",
+				alt: "Overview of the Divido shared-expenses app",
+			},
+			technologies: [
+				"React Native",
+				"Expo",
+				"Expo Router",
+				"TypeScript",
+				"Supabase",
+				"PostgreSQL",
+				"Supabase Auth",
+				"Row Level Security",
+				"React Hook Form",
+				"Zod",
+			],
+			links: {
+				github: "https://github.com/alicegmn/divido",
+			},
+			problem:
+				"Shared expenses quickly become difficult to track when different people pay for different things. The challenge is not only recording expenses, but modelling participants, payments and splits in a way that allows balances to be calculated reliably.",
+			solution:
+				"I am developing Divido as a mobile app where users can create groups, manage members and register shared expenses. React Native and Expo are used for the client, while Supabase provides authentication, APIs and a PostgreSQL database. Access is controlled with Row Level Security so users can only access groups and data they are authorised to view.",
+			responsibilities: [
+				"Responsible for the product concept and user flows.",
+				"Developing the frontend and data model.",
+				"Implementing authentication and database architecture.",
+				"Working with API integration and access-control policies.",
+				"Implementing form validation and version-controlled database migrations.",
+			],
+			technicalHighlights: [
+				"Supabase Auth is used together with a separate profiles model for application data.",
+				"PostgreSQL Row Level Security controls access to groups and memberships.",
+				"A PostgreSQL function creates the group and its initial membership atomically within the same transaction.",
+				"React Hook Form and Zod are used for forms and validation.",
+				"Expo Router is used for navigation.",
+			],
+			challenges: [],
+			result:
+				"The project currently includes a working mobile foundation with registration, login, user profiles, group creation and group member views connected to a production-oriented backend. The next stage focuses on invitations and the core expense, split and balance models.",
+			learnings: [
+				"Working more production-oriented with mobile development and backend architecture.",
+				"Separating authentication from application data and avoiding reliance on the client for security or critical business logic.",
+				"Working practically with PostgreSQL relationships, RLS, database functions and atomic operations.",
+			],
+		},
+		"future-days": {
+			title: "Future Days",
+			summary:
+				"A website for Future Days, an international festival focused on culture, design and questions about the future.",
+			category: "Project during internship",
+			period: "2026",
+			role: "Frontend Developer Intern",
+			team: "Built the website together with another intern. The work was supervised and reviewed by our supervisor at Dynamic Dog.",
+			image: {
+				src: "/images/projects/future-days.png",
+				alt: "Future Days website",
+			},
+			technologies: [
+				"React",
+				"Next.js",
+				"TypeScript",
+				"CSS Modules",
+				"Storyblok",
+				"Brevo",
+			],
+			links: {
+				live: "https://www.futuredays.io/",
+			},
+			problem:
+				"Future Days needed its existing design to be turned into a working, content-driven website. The site also needed to support editorial content and form integrations.",
+			solution:
+				"I built reusable UI components in React and Next.js with TypeScript and CSS Modules. I integrated Storyblok for content management and connected forms to Brevo.",
+			responsibilities: [
+				"Built UI components in React and Next.js based on Future Days' existing design.",
+				"Developed the interface with TypeScript and CSS Modules.",
+				"Integrated Storyblok for editorial content.",
+				"Implemented a form integration with Brevo.",
+			],
+			technicalHighlights: [
+				"Reusable UI components built with React and Next.js.",
+				"TypeScript for typed frontend development.",
+				"CSS Modules for component-based styling.",
+				"Storyblok integration for content management.",
+				"Brevo integration for form handling.",
+			],
+			challenges: [],
+			result:
+				"The result was a working Future Days website that translates the existing design into reusable React and Next.js components, with Storyblok integration and forms connected to Brevo.",
+			learnings: [
+				"Turning an established visual design into reusable frontend components.",
+				"Working with content-driven websites and Storyblok.",
+				"Integrating forms with external services such as Brevo.",
 			],
 		},
 	},
